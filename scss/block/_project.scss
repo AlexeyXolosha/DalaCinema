@@ -1,0 +1,30 @@
+.project{
+    margin: 100px 0;
+}
+
+.project_h1{
+    font-family: $font-accent;
+    font-size: 32px;
+    font-weight: 700;
+    color: $dark;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+
+.project_images{
+    max-height: 700px;
+    height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: top; 
+}
+
+.swiper-container {
+    overflow: hidden;
+}
+
+.swiper-container {
+    overscroll-behavior: contain;
+}
+

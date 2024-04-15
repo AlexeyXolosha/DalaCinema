@@ -1,0 +1,21 @@
+.footer{
+    padding: 80px 0;
+    min-height: 500px;
+    background-color: $dark;
+}
+
+.logo-footer{
+    display: flex;
+    justify-content: center;
+}
+
+.logo-footer p{
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.1rem;
+}
+
+.footer_item{
+    display: flex;
+}

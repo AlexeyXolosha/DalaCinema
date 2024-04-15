@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
+    <title>DalaCinema - Добавить жанр</title>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header_top">
+                <div class="header_top_row">
+                    <a href="#!" class="logo">
+                        <img src="../../img/logo.png" alt="DalaCinema" class="logo-img">
+                    </a>
+                    <div class="header_nav">
+                        <nav class="nav">
+                            <ul class="nav-ul">
+                                <li><a href="../../index.html" class="nav-a" id="home-link">Главная</a></li>
+                                <li><a href="../news.html" class="nav-a" id="news-link">Новости</a></li>
+                                <li><a href="../project.html" class="nav-a">Проекты</a></li>
+                                <li><a href="#!" class="nav-a">О нас</a></li>
+                                <li><a href="../login.html">Вход</a></li>                      
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </header>
+
+    <div class="block-add">
+        <div class="container">
+            <div class="admin-block-add-inner">
+                <div class="input-block">
+                    <h1>Добавить жанр</h1>
+                    <input type="text" class="input-genre">
+                    <button class="btn-adm">Добавить</button>
+                </div>
+                <div class="tabel-block-genre">
+                    <table class="tabel-admin">
+                        <tr>
+                            <th>Жанр</th>
+                            <th>Delete</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Боевик"></td>
+                            <td><button>Удалить</button></td>
+                            <td><button id="openBtnUP">Изменить</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop_up">
+        <div class="pop_up_container">
+            <div class="pop_up_body">
+                <p class="title-pop_up">Введите названия жанра</p>
+                <form class="admin-form">
+                    <input type="text" class="admin-pop-up-input">
+                    <div class="btn-inner">
+                        <button class="btn-adm-pop-up">Изменить</button>
+                        <button class="btn-adm-pop-up" id="closedBtnUp">Отменить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <a class="logo-footer" href="">
+                <p>DalaCinema</p>
+            </a>
+            <div class="footer_item">
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Кастинги</a></li>
+                    <li><a href="#">Проекты</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const openPopUp = document.getElementById('openBtnUP');
+        const closePoPUP = document.getElementById('closedBtnUp');
+        const popUP = document.querySelector('.pop_up');
+
+        openPopUp.addEventListener('click', function(e){
+            e.preventDefault();
+            popUP.classList.add('active');
+
+        });
+
+        closePoPUP.addEventListener('click', () => {
+            popUP.classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>

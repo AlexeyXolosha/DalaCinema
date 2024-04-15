@@ -1,0 +1,75 @@
+.block-add{
+    font-family: $font-accent-two;
+    padding-top: 100px;
+    background-color: $dark;
+}
+
+.admin-block-add-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-block{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+
+.input-genre{
+    background-color: $white;
+    color: $dark;
+    height: 35px;
+    padding: 10px 10px;
+}
+
+.btn-adm{
+    margin-top: 10px;
+    padding: 10px 10px;
+    border: 1px solid $white;
+    align-self: flex-end;
+}
+
+.tabel-block-genre{
+    margin-top: 100px;
+}
+
+.tabel-admin{
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.tabel-admin tr{
+    background-color: #282828;
+}
+
+.tabel-admin tr, .tabel-admin th, .tabel-admin td{
+    padding: 25px 120px;
+    white-space: nowrap; 
+    text-align: center; /* Добавлено для выравнивания текста по центру */
+}
+
+.tabel-admin input{
+    text-align: center;
+}
+
+.btn-admin-add{
+    font-size: 18px;
+    text-transform: uppercase;
+    background: $white;
+    color: $dark;
+    padding: 15px 20px;
+}
+
+.section-input-add{
+}
+
+
+.section-input-add input{
+    border: 1px solid $white;
+    margin: 5px 0;
+    padding: 5px 10px;
+}

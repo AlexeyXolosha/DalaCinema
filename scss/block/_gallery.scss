@@ -1,0 +1,70 @@
+.gallery{
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.gallery_h1{
+    font-family: $font-accent;
+    font-size: 32px;
+    font-weight: 700;
+    color: $dark;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+
+.tabs_nav{
+    margin: 20px 0;
+}
+
+.tabs-btn{
+    font-family: $font-accent;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $dark;
+    padding: 10px 0;
+    position: relative;
+}
+
+.tabs-btn:first-child{
+    margin-right: 20px;
+}
+
+.tabs-btn.active-tabs::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $blue; /* Замените на цвет вашего акцента */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.gallery-tabs-cadr{
+    display: none;
+}
+
+.gallery-tabs-cadr.active-tabs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.gallery-cadr-content{
+    margin: 10px 0;
+}
+
+
+.gallery-cadr-img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+}
+
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../css/main.css">
+        <title>DalaCinema - Профиль</title>
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header_top">
+                <div class="header_top_row">
+                    <a href="#!" class="logo">
+                        <img src="../../img/logo.png" alt="DalaCinema" class="logo-img">
+                    </a>
+                    <div class="header_nav">
+                        <nav class="nav">
+                            <ul class="nav-ul">
+                                <li><a href="../../index.html" class="nav-a" id="home-link">Главная</a></li>
+                                <li><a href="../news.html" class="nav-a" id="news-link">Новости</a></li>
+                                <li><a href="../project.html" class="nav-a">Проекты</a></li>
+                                <li><a href="#!" class="nav-a">О нас</a></li>
+                                <li><a href="../login.html">Вход</a></li>                      
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </header>
+
+    <div class="profile">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <h1 class="profile-title">Профиль</h1>
+                    <ul class="profile-ul">
+                        <li><a href="profile.html" class="profile-link">Основное</a></li>
+                        <li><a href="form.html" class="profile-link">Анкета</a></li>
+                        <li><a href="applications.html" class="profile-link">Заявки</a></li>
+                    </ul>
+                </div>
+                <div class="profile-applications">
+                    <table class="tb-pro-applica">
+                        <tr>
+                            <th>Статус</th>
+                            <th>Проект</th>
+                            <th>Дата</th>
+                            <th>Изменить</th>
+                        </tr>
+                        <tr>
+                            <td class="status">Рассматривается</td>
+                            <td>Үміт сәулесі</td>
+                            <td>07/04/2024</td>
+                            <td>Изменить</td>
+                        </tr>
+                        <tr>
+                            <td class="status">Отклонено</td>
+                            <td>Үміт сәулесі</td>
+                            <td>07/04/2024</td>
+                            <td><button>Изменить</button></td>
+                        </tr>
+                        <tr>
+                            <td class="status">Принято</td>
+                            <td>Үміт сәулесі</td>
+                            <td>07/04/2024</td>
+                            <td>Изменить</td>
+                        </tr>
+                    </table>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function() {
+        var statuses = document.querySelectorAll(".status");
+        statuses.forEach(function(status) {
+            var statusText = status.textContent.trim();
+            switch (statusText) {
+                case "Рассматривается":
+                    status.classList.add("status-pending");
+                    break;
+                case "Отклонено":
+                    status.classList.add("status-rejected");
+                    break;
+                case "Принято":
+                    status.classList.add("status-accepted");
+                    break;
+                default:
+                    break;
+            }
+        });
+    });
+    </script>
+    <script src="../../js/app.js"></script>
+   
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?php
+session_start();
+
+// Проверяем, существует ли сессия
+if(isset($_SESSION['user'])) {
+    // Сессия существует, перенаправляем пользователя на другую страницу
+    header("Location: /profile");
+    exit; // Важно завершить выполнение скрипта после перенаправления
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>DalaCinema - Вход</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="img-logo">
+            <img src="../img/logo_1.JPG" alt="" class="logo">
+        </div>
+        
+        <form action="/views/pages/src/action/login_handler.php" method="POST">
+            <div class="top">
+                <h1>Вход</h1>
+            </div>
+
+            <div class="top">
+                <p class="err">Ошибка</p>
+            </div>
+
+            <div class="input-box">
+                <input type="email" class="input-field" id="email" placeholder="Емайл" name="email" required>
+            </div>
+    
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="Пароль" id="password" name="password" required>
+            </div>
+            
+            <div class="btn-box">
+                <button type="submit" class="submit">Войти</button>
+                <a href="#" class="btn-a-reg">Зарегистрироваться</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const inputs = document.querySelectorAll('.input-field');
+    
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.value !== '') {
+                    input.style.color = 'black';
+                } else {
+                    input.style.color = '#8F8F8F'; // Исходный серый цвет
+                }
+            });
+    
+            input.addEventListener('blur', () => {
+                if (input.value === '') {
+                    input.style.color = '#8F8F8F'; // Возвращаем к исходному серому цвету
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+

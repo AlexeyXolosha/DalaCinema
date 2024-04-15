@@ -1,0 +1,88 @@
+<?php
+session_start();
+
+// Проверяем, существует ли сессия
+if(isset($_SESSION['user'])) {
+    // Сессия существует, перенаправляем пользователя на другую страницу
+    header("Location: /profile");
+    exit; // Важно завершить выполнение скрипта после перенаправления
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>DalaCinema - Регистрация</title>
+</head>
+<body>
+
+    
+
+    <div class="container">
+            <div class="img-logo">
+                <img src="../img/logo_1.JPG" alt="" class="logo">
+            </div>
+        <form action="/views/pages/src/action/register_handler.php" method="POST">
+            <div class="top">
+                <h1>Регистрация</h1>
+            </div>
+
+            <div class="top">
+                <p class="err">Ошибка</p>
+            </div>
+            <!---Имя---->
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Имя" id="name" name="name" required>
+            </div>
+            <!---Фамилия---->
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Фамилия" id="surname" name="surname" required>
+            </div>
+    
+            <div class="input-box">
+                <input type="email" class="input-field" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="Емайл" required>   
+            </div>
+    
+            <div class="form-input-two">
+                <div class="input-box-left">
+                    <input type="password" class="input-field" id="password" name="password" pattern=".{8,32}" placeholder="Пароль" required> 
+                </div>
+                <div class="input-box-right">
+                    <input type="password" class="input-field" id="confirm_password" placeholder="Повторите пароль" name="confirm_password" required>   
+                </div>
+            </div>
+            
+            <div class="btn-box">
+                <button type="submit" class="submit">Зарегистрироваться</button>
+                <a href="#" class="btn-a-reg">Уже есть аккаунт</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const inputs = document.querySelectorAll('.input-field');
+    
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.value !== '') {
+                    input.style.color = 'black';
+                } else {
+                    input.style.color = '#8F8F8F'; // Исходный серый цвет
+                }
+            });
+    
+            input.addEventListener('blur', () => {
+                if (input.value === '') {
+                    input.style.color = '#8F8F8F'; // Возвращаем к исходному серому цвету
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+

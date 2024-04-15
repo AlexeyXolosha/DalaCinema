@@ -1,0 +1,35 @@
+.intro{
+    padding-top: 100px;
+    background-color: $dark;
+    min-height: 600px;
+    font-family: $font-main;
+    letter-spacing: 1.5px;
+}
+
+.intro_inner{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+}
+
+.intro_title{
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.btn_int{
+    display: inline-block;
+    border: 1px solid $white;
+    max-width: 250px;
+    border-radius: 5px;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+
+    margin: 30px;
+}
