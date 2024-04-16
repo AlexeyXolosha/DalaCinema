@@ -6,16 +6,17 @@
 
 .admin-block-add-inner{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
+
+/*Input CSS*/
 
 .input-block{
     display: flex;
     flex-direction: column;
-    width: 100%;
     max-width: 500px;
+    width: 100%;
 }
 
 .input-genre{
@@ -23,17 +24,16 @@
     color: $dark;
     height: 35px;
     padding: 10px 10px;
+    margin: 10px 0;
 }
 
-.btn-adm{
-    margin-top: 10px;
-    padding: 10px 10px;
-    border: 1px solid $white;
-    align-self: flex-end;
-}
-
-.tabel-block-genre{
-    margin-top: 100px;
+/*Таблица*/
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Уменьшим верхний отступ */
+    overflow-x: auto; 
+    width: 100%; 
 }
 
 .tabel-admin{
@@ -47,7 +47,7 @@
 }
 
 .tabel-admin tr, .tabel-admin th, .tabel-admin td{
-    padding: 25px 120px;
+    padding: 25px 35px;
     white-space: nowrap; 
     text-align: center; /* Добавлено для выравнивания текста по центру */
 }
@@ -56,20 +56,11 @@
     text-align: center;
 }
 
-.btn-admin-add{
-    font-size: 18px;
-    text-transform: uppercase;
-    background: $white;
-    color: $dark;
-    padding: 15px 20px;
-}
 
-.section-input-add{
-}
-
-
-.section-input-add input{
+/*Button Style*/
+.btn-add{
+    width: 300px;
     border: 1px solid $white;
-    margin: 5px 0;
-    padding: 5px 10px;
+    padding: 10px 15px;
+    align-self: center;
 }

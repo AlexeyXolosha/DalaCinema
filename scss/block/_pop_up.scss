@@ -9,6 +9,21 @@
     z-index: 2;
 }
 
+.pop_up_edit{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 2;
+}
+
+.pop_up_edit.active{
+    display: block;
+}
+
 .pop_up.active{
     display: block;
 }
@@ -20,37 +35,50 @@
 }
 
 .pop_up_body{
-    font-size: $font-accent-two;
+    font-family: $font-accent-two;
     margin: auto;
     width: 500px;
     background-color: $dark;
     border-radius: 10px;
     text-align: center;
-    padding: 100px 15px 110px 15px;
+    padding: 70px 20px 70px 20px;
     position: relative;
-    overflow-y: auto; /* Добавляем вертикальную прокрутку */
-    max-height: 70vh; /* Максимальная высота для прокрутки */
+    overflow-y: auto; 
+    max-height: 70vh; 
 }
 
-.admin-form{
+.pop-admin-form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
 }
 
-.admin-pop-up-input{
-    background-color: $white;
-    padding: 10px 10px;
-    color: $dark;
+.pop-role-section{
+    margin-bottom: 20px;
 }
 
-.btn-inner{
-    display: flex;
-    justify-content: flex-end;
+.pop-role-section select{
+    margin-left: 20px;
+    background-color: $dark;
+}
+
+.pop-section-input-add input{
+    border-bottom: 1px solid $white;
+    padding: 10px 5px;
+    margin: 5px 0;
 }
 
 .btn-adm-pop-up{
-    margin: 0 5px;
+    display: block;
     border: 1px solid $white;
     padding: 10px 10px;
+    width: 200px;
+    margin: 10px 0;
+}
+
+.pop_up-images{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }

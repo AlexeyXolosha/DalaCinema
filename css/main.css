@@ -195,6 +195,15 @@ a {
   letter-spacing: 1.5px;
 }
 
+.title_block {
+  font-family: "Raleway", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
 .intro_inner {
   width: 100%;
   max-width: 700px;
@@ -227,14 +236,6 @@ a {
 .news {
   margin-top: 100px;
   font-family: "Raleway", sans-serif;
-}
-
-.news_h1 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #111111;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
 }
 
 .news-block {
@@ -336,6 +337,10 @@ a {
   margin: 100px 0;
 }
 
+.project_item {
+  margin-top: 40px;
+}
+
 .project_h1 {
   font-family: "Raleway", sans-serif;
   font-size: 32px;
@@ -367,15 +372,6 @@ a {
 .gallery {
   margin-top: 100px;
   margin-bottom: 200px;
-}
-
-.gallery_h1 {
-  font-family: "Raleway", sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #111111;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
 }
 
 .tabs_nav {
@@ -513,6 +509,21 @@ a {
   z-index: 2;
 }
 
+.pop_up_edit {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.pop_up_edit.active {
+  display: block;
+}
+
 .pop_up.active {
   display: block;
 }
@@ -526,19 +537,19 @@ a {
 }
 
 .pop_up_body {
-  font-size: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: auto;
   width: 500px;
   background-color: #111111;
   border-radius: 10px;
   text-align: center;
-  padding: 100px 15px 110px 15px;
+  padding: 70px 20px 70px 20px;
   position: relative;
-  overflow-y: auto; /* Добавляем вертикальную прокрутку */
-  max-height: 70vh; /* Максимальная высота для прокрутки */
+  overflow-y: auto;
+  max-height: 70vh;
 }
 
-.admin-form {
+.pop-admin-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -546,28 +557,39 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
 }
 
-.admin-pop-up-input {
-  background-color: #FFFFFF;
-  padding: 10px 10px;
-  color: #111111;
+.pop-role-section {
+  margin-bottom: 20px;
 }
 
-.btn-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+.pop-role-section select {
+  margin-left: 20px;
+  background-color: #111111;
+}
+
+.pop-section-input-add input {
+  border-bottom: 1px solid #FFFFFF;
+  padding: 10px 5px;
+  margin: 5px 0;
 }
 
 .btn-adm-pop-up {
-  margin: 0 5px;
+  display: block;
   border: 1px solid #FFFFFF;
   padding: 10px 10px;
+  width: 200px;
+  margin: 10px 0;
+}
+
+.pop_up-images {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .intro_inner_page {
@@ -794,18 +816,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
+/*Input CSS*/
 .input-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -814,8 +834,8 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
   max-width: 500px;
+  width: 100%;
 }
 
 .input-genre {
@@ -823,18 +843,20 @@ a {
   color: #111111;
   height: 35px;
   padding: 10px 10px;
+  margin: 10px 0;
 }
 
-.btn-adm {
-  margin-top: 10px;
-  padding: 10px 10px;
-  border: 1px solid #FFFFFF;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-.tabel-block-genre {
-  margin-top: 100px;
+/*Таблица*/
+.table-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px; /* Уменьшим верхний отступ */
+  overflow-x: auto;
+  width: 100%;
 }
 
 .tabel-admin {
@@ -848,7 +870,7 @@ a {
 }
 
 .tabel-admin tr, .tabel-admin th, .tabel-admin td {
-  padding: 25px 120px;
+  padding: 25px 35px;
   white-space: nowrap;
   text-align: center; /* Добавлено для выравнивания текста по центру */
 }
@@ -857,16 +879,11 @@ a {
   text-align: center;
 }
 
-.btn-admin-add {
-  font-size: 18px;
-  text-transform: uppercase;
-  background: #FFFFFF;
-  color: #111111;
-  padding: 15px 20px;
-}
-
-.section-input-add input {
+/*Button Style*/
+.btn-add {
+  width: 300px;
   border: 1px solid #FFFFFF;
-  margin: 5px 0;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  -ms-flex-item-align: center;
+      align-self: center;
 }

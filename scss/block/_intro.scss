@@ -6,6 +6,15 @@
     letter-spacing: 1.5px;
 }
 
+.title_block{
+    font-family: $font-accent;
+    font-size: 32px;
+    font-weight: 700;
+    color: $dark;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
 .intro_inner{
     width: 100%;
     max-width: 700px;

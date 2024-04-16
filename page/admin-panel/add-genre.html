@@ -37,9 +37,9 @@
                 <div class="input-block">
                     <h1>Добавить жанр</h1>
                     <input type="text" class="input-genre">
-                    <button class="btn-adm">Добавить</button>
+                    <button class="btn-add">Добавить</button>
                 </div>
-                <div class="tabel-block-genre">
+                <div class="table-container">
                     <table class="tabel-admin">
                         <tr>
                             <th>Жанр</th>
@@ -56,11 +56,12 @@
             </div>
         </div>
     </div>
+    
     <div class="pop_up">
         <div class="pop_up_container">
             <div class="pop_up_body">
                 <p class="title-pop_up">Введите названия жанра</p>
-                <form class="admin-form">
+                <form class="pop-admin-form">
                     <input type="text" class="admin-pop-up-input">
                     <div class="btn-inner">
                         <button class="btn-adm-pop-up">Изменить</button>
@@ -86,21 +87,6 @@
         </div>
     </footer>
     
-    <script>
-        const openPopUp = document.getElementById('openBtnUP');
-        const closePoPUP = document.getElementById('closedBtnUp');
-        const popUP = document.querySelector('.pop_up');
-
-        openPopUp.addEventListener('click', function(e){
-            e.preventDefault();
-            popUP.classList.add('active');
-
-        });
-
-        closePoPUP.addEventListener('click', () => {
-            popUP.classList.remove('active');
-        });
-    </script>
-
+    <script src="../../js/app.js"></script>
 </body>
 </html>
