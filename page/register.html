@@ -15,55 +15,56 @@ if(isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
     <title>DalaCinema - Регистрация</title>
 </head>
 <body>
 
-    
-    
-
-
-    <div class="container">
-            <div class="img-logo">
-                <img src="../img/logo_1.JPG" alt="" class="logo">
-            </div>
-        <form action="/views/pages/src/action/register_handler.php" method="POST">
-            <div class="top">
-                <h1>Регистрация</h1>
-            </div>
-
-            <div class="top">
-                <p class="err">Ошибка</p>
-            </div>
-            <!---Имя---->
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Имя" id="name" name="name" required>
-            </div>
-            <!---Фамилия---->
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Фамилия" id="surname" name="surname" required>
-            </div>
-    
-            <div class="input-box">
-                <input type="email" class="input-field" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="Емайл" required>   
-            </div>
-    
-            <div class="form-input-two">
-                <div class="input-box-left">
-                    <input type="password" class="input-field" id="password" name="password" pattern=".{8,32}" placeholder="Пароль" required> 
+    <div class="container-log">
+            <div class="container-registration">
+                <div class="logo-reg-block">
+                    <img src="../img/logo_1.JPG" alt="" class="img-logo-reg">
                 </div>
-                <div class="input-box-right">
-                    <input type="password" class="input-field" id="confirm_password" placeholder="Повторите пароль" name="confirm_password" required>   
+            <form action="/views/pages/src/action/register_handler.php" method="POST">
+                <div class="login-title-top">
+                    <h1 class="title-welcome">Регистрация</h1>
                 </div>
-            </div>
-            
-            <div class="btn-box">
-                <button type="submit" class="submit">Зарегистрироваться</button>
-                <a href="../page/login.html" class="btn-a-reg">Уже есть аккаунт</a>
-            </div>
-        </form>
+
+                <div class="login-title-top">
+                    <p class="err">Ошибка</p>
+                </div>
+                <!---Имя---->
+                <div class="input-log-reg">
+                    <input type="text" class="input-field" placeholder="Имя" id="name" name="name" required>
+                </div>
+                <!---Фамилия---->
+                <div class="input-log-reg">
+                    <input type="text" class="input-field" placeholder="Фамилия" id="surname" name="surname" required>
+                </div>
+        
+                <div class="input-log-reg">
+                    <input type="email" class="input-field" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="Емайл" required>   
+                </div>
+        
+                <div class="form-input-two-reg">
+                    <div class="input-box-left">
+                        <input type="password" class="input-field" id="password" name="password" pattern=".{8,32}" placeholder="Пароль" required> 
+                    </div>
+                    <div class="input-box-right">
+                        <input type="password" class="input-field" id="confirm_password" placeholder="Повторите пароль" name="confirm_password" required>   
+                    </div>
+                </div>
+                
+                <div class="btn-box-reg">
+                    <button type="submit" class="submit">Зарегистрироваться</button>
+                    <a href="../page/login.html" class="btn-a-reg">Уже есть аккаунт</a>
+                </div>
+            </form>
+        </div>
     </div>
+
+
+    
 
     <script>
         const inputs = document.querySelectorAll('.input-field');

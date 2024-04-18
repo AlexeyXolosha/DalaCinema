@@ -31,13 +31,12 @@
 .table-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px; /* Уменьшим верхний отступ */
-    overflow-x: auto; 
-    width: 100%; 
+    margin-top: 50px;
+    width: 100%;
 }
 
 .tabel-admin{
-    display: table;
+    min-width: 100%; /* Минимальная ширина таблицы равная ширине контейнера */
     border-collapse: separate;
     border-spacing: 0 10px;
 }
@@ -48,7 +47,7 @@
 
 .tabel-admin tr, .tabel-admin th, .tabel-admin td{
     padding: 25px 35px;
-    white-space: nowrap; 
+    white-space: nowrap;
     text-align: center; /* Добавлено для выравнивания текста по центру */
 }
 
@@ -56,6 +55,9 @@
     text-align: center;
 }
 
+.tabel-admin-img{
+    width: 100%;
+}
 
 /*Button Style*/
 .btn-add{

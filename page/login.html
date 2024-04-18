@@ -15,40 +15,42 @@ if(isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
     <title>DalaCinema - Вход</title>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container-log">
+        <div class="container-registration">
 
-        <div class="img-logo">
-            <img src="../img/logo_1.JPG" alt="" class="logo">
-        </div>
-        
-        <form action="/views/pages/src/action/login_handler.php" method="POST">
-            <div class="top">
-                <h1>Вход</h1>
-            </div>
-
-            <div class="top">
-                <p class="err">Ошибка</p>
-            </div>
-
-            <div class="input-box">
-                <input type="email" class="input-field" id="email" placeholder="Емайл" name="email" required>
-            </div>
-    
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Пароль" id="password" name="password" required>
+            <div class="logo-reg-block">
+                <img src="../img/logo_1.JPG" alt="" class="img-logo-reg">
             </div>
             
-            <div class="btn-box">
-                <button type="submit" class="submit">Войти</button>
-                <a href="register.html" class="btn-a-reg">Зарегистрироваться</a>
-            </div>
-        </form>
+            <form action="/views/pages/src/action/login_handler.php" method="POST">
+                <div class="login-title-top">
+                    <h1 class="title-welcome">Вход</h1>
+                </div>
+    
+                <div class="login-title-top">
+                    <p class="err">Ошибка</p>
+                </div>
+    
+                <div class="input-log">
+                    <input type="email" class="input-field" id="email" placeholder="Емайл" name="email" required>
+                </div>
+        
+                <div class="input-log">
+                    <input type="password" class="input-field" placeholder="Пароль" id="password" name="password" required>
+                </div>
+                
+                <div class="btn-box-reg">
+                    <button type="submit" class="submit">Войти</button>
+                    <a href="register.html" class="btn-a-reg">Зарегистрироваться</a>
+                </div>
+            </form>
     </div>
+
 
     <script>
         const inputs = document.querySelectorAll('.input-field');

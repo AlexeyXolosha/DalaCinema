@@ -1,13 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
 *{  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+.container-log{
     font-family: 'Montserrat Alternates', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
@@ -16,22 +13,7 @@ body{
     min-height: 100vh;
 }
 
-.logo {
-    width: 150px; 
-    height: auto; 
-}
-
-
-.top{
-    margin: 25px;
-    text-align: center;
-}
-
-.err{
-    color: #F40000;
-}
-
-.container{
+.container-registration{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,16 +25,35 @@ body{
     border-radius: 15px;
 }
 
+.title-welcome{
+    color: $dark;
+    font-size: 24px;
+    font-weight: 700;
+}
 
-.form-input-two{
+.img-logo-reg {
+    width: 150px; 
+    height: auto; 
+}
+
+
+.login-title-top{
+    margin: 25px;
+    text-align: center;
+}
+
+.err{
+    color: #F40000;
+}
+
+.form-input-two-reg{
     display: flex;
     gap: 10px;
 }
 
 
-.input-box{
+.input-log-reg{
     margin-top: 20px;
-    width: 500px;
 }
 
 .input-field{
@@ -73,11 +74,16 @@ body{
     width: 50%; /* Распределение ширины полей ввода пароля */
 }
 
+.input-log{
+    margin: 10px 0;
+    width: 500px;
+}
+
 .input-field:focus {
     color: black;
 }
 
-.btn-box{
+.btn-box-reg{
     display: flex;
     flex-direction: column;
     justify-content: center;
