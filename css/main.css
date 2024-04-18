@@ -720,7 +720,18 @@ a {
 .profile-link {
   font-size: 18px;
   padding-bottom: 5px;
+  color: #8a8a8a;
   position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.profile-link:hover {
+  color: #FFFFFF;
+}
+
+.active-link {
+  color: #ffffff;
 }
 
 .profile-link.active-link::after {
@@ -728,7 +739,7 @@ a {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #FFFFFF; /* использование переменной */
+  background-color: #FFFFFF;
   position: absolute;
   bottom: 0px;
   left: 0;
@@ -825,6 +836,24 @@ a {
           align-items: center;
 }
 
+.admin-filter-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.search-block input {
+  margin-right: 20px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.search-block button {
+  border: 1px solid #FFFFFF;
+}
+
 /*Input CSS*/
 .input-block {
   display: -webkit-box;
@@ -851,15 +880,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 50px;
   width: 100%;
 }
 
 .tabel-admin {
-  min-width: 100%; /* Минимальная ширина таблицы равная ширине контейнера */
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0 10px;
 }
@@ -869,7 +899,7 @@ a {
 }
 
 .tabel-admin tr, .tabel-admin th, .tabel-admin td {
-  padding: 25px 35px;
+  padding: 25px 30px;
   white-space: nowrap;
   text-align: center; /* Добавлено для выравнивания текста по центру */
 }

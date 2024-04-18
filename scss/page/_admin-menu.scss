@@ -10,6 +10,20 @@
     align-items: center;
 }
 
+.admin-filter-block{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-block input{
+    margin-right: 20px;
+    border-bottom: 1px solid $white;
+}
+
+.search-block button{
+    border: 1px solid $white;
+}
+
 /*Input CSS*/
 
 .input-block{
@@ -30,13 +44,13 @@
 /*Таблица*/
 .table-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     margin-top: 50px;
     width: 100%;
 }
 
 .tabel-admin{
-    min-width: 100%; /* Минимальная ширина таблицы равная ширине контейнера */
+    width: 100%;
     border-collapse: separate;
     border-spacing: 0 10px;
 }
@@ -46,7 +60,7 @@
 }
 
 .tabel-admin tr, .tabel-admin th, .tabel-admin td{
-    padding: 25px 35px;
+    padding: 25px 30px;
     white-space: nowrap;
     text-align: center; /* Добавлено для выравнивания текста по центру */
 }
