@@ -170,7 +170,7 @@ a {
 }
 
 .nav-a:hover {
-  color: red; /* изменяем цвет при наведении */
+  color: #1C93FF; /* изменяем цвет при наведении */
   font-size: 1.1em; /* увеличиваем размер текста */
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* добавляем тень */
@@ -380,7 +380,7 @@ a {
 
 .tabs-btn {
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   color: #111111;
@@ -1095,11 +1095,8 @@ a {
 .project-inner {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; /* Делаем внутренний блок flex для управления расположением элементов */
-  max-width: 1200px; /* Максимальная ширина контейнера */
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch; /* Это обеспечит растяжение содержимого по высоте */
+  display: flex;
+  max-width: 1200px;
 }
 
 .project-poster {
@@ -1107,8 +1104,12 @@ a {
 }
 
 .project-poster-open {
-  height: 400px;
-  width: auto;
+  height: 500px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .project_name {
@@ -1134,13 +1135,42 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; /* Это разместит элементы в одной строке и разделит пространство между ними */
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; /* Выравнивание элементов по центру */
-  margin-top: 15px;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px 0;
+  position: relative; /* Добавляем позиционирование для элемента .project-row-subtitle */
+}
+
+.project-row-title {
+  width: 180px;
+  font-size: 14px;
+}
+
+.project-row-subtitle {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 18px;
+}
+
+.project-row-title {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.btn-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
 }
 
 .sumb-applic {
@@ -1156,15 +1186,67 @@ a {
   color: #111111; /* Изменяем цвет текста при наведении */
 }
 
-.project-description {
+/*Проект БЛОК ОПИСАНИЯ И ВИДЕО*/
+.project-block-material {
   color: #111111;
   margin-top: 100px;
 }
 
+.project-description {
+  width: 750px;
+  height: auto;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.project-desc-mat {
+  display: none;
+}
+
+.project-desc-mat.active-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tabs-btn-project {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #111111;
+  padding: 10px 0;
+  position: relative;
+}
+
+.tabs-btn-project:first-child {
+  margin-right: 20px;
+}
+
+.tabs-btn-project.active-tabs::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #1C93FF; /* Замените на цвет вашего акцента */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/*ACTORS BLOCK*/
 .actors-block {
   font-family: "Montserrat", sans-serif;
   color: #111111;
   margin-top: 100px;
+}
+
+.actors_title_block {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .img-actors {
@@ -1216,6 +1298,7 @@ a {
 
 .frame-project-block {
   margin-top: 100px;
+  overflow: hidden;
 }
 
 .frame-item {
@@ -1225,6 +1308,18 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%; /* Добавьте эту строку */
+}
+
+.project-images {
+  width: 25%; /* Для четырех изображений на строку */
+  padding: 25px;
+}
+
+.gallery-project {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /*VIDEO*/

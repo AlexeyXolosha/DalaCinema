@@ -6,7 +6,6 @@
     justify-content: center; /* Центрируем содержимое по горизонтали */
 }
 
-
 .project-details{
     display: flex;
     flex-direction: column;
@@ -14,9 +13,8 @@
 }
 
 .project-inner {
-    display: flex; /* Делаем внутренний блок flex для управления расположением элементов */
-    max-width: 1200px; /* Максимальная ширина контейнера */
-    align-items: stretch; /* Это обеспечит растяжение содержимого по высоте */
+    display: flex; 
+    max-width: 1200px; 
 }
 
 .project-poster {
@@ -24,8 +22,10 @@
 }
 
 .project-poster-open {
-    height: 400px;
-    width: auto; 
+    height: 500px;
+    width: 100%; 
+    object-fit: cover;
+    object-position: center;
 }
 
 .project_name{
@@ -45,14 +45,32 @@
 
 .project-row-info {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Это разместит элементы в одной строке и разделит пространство между ними */
-    align-items: center; /* Выравнивание элементов по центру */
-    margin-top: 15px;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between;
+    margin: 20px 0;
+    position: relative; /* Добавляем позиционирование для элемента .project-row-subtitle */
+}
+
+.project-row-title{
+    width: 180px;
+    font-size: 14px;
+}
+
+.project-row-subtitle {
+    flex: 1;
+    font-size: 18px;
+}
+
+.project-row-title {
+    margin-right: 10px;
+    font-size: 18px;
 }
 
 .btn-block{
-
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .sumb-applic {
@@ -68,15 +86,65 @@
     color: $dark; /* Изменяем цвет текста при наведении */
 }
 
-.project-description{
+/*Проект БЛОК ОПИСАНИЯ И ВИДЕО*/
+.project-block-material{
     color: $dark;
     margin-top: 100px;
 }
 
+.project-description{
+    width: 750px;
+    height: auto;
+}
+
+.description{
+    font-size: 16px;
+}
+
+.project-desc-mat {
+    display: none;
+}
+
+.project-desc-mat.active-tabs {
+    display: flex;
+}
+
+.tabs-btn-project{
+    font-family: $font-accent;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $dark;
+    padding: 10px 0;
+    position: relative;
+}
+
+.tabs-btn-project:first-child{
+    margin-right: 20px;
+}
+
+.tabs-btn-project.active-tabs::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $blue; /* Замените на цвет вашего акцента */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*ACTORS BLOCK*/
 .actors-block{
     font-family: $font-accent-two;
     color: $dark;
     margin-top: 100px;
+}
+
+.actors_title_block{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .img-actors{
@@ -117,13 +185,25 @@
 
 .frame-project-block{
     margin-top: 100px;
+    overflow: hidden;
 }
 
 .frame-item{
     display: flex;
     justify-content: space-between;
+    width: 100%; /* Добавьте эту строку */
 }
 
+.project-images{
+    width: calc(100% / 4); /* Для четырех изображений на строку */
+    padding: 25px;
+}
+
+.gallery-project{
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 /*VIDEO*/
 .video{

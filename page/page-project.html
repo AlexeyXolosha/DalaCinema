@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <title>DalaCinema - "Название проекта"</title>
 </head>
 <body>
@@ -74,31 +75,34 @@
                     </div>
                     <div class="btn-block">
                         <button class="sumb-applic">Подать заявку на кастинг</button>
+                        <button class="sumb-applic">Просмотр всех заявок</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <div class="project-description">
+    <div class="project-block-material">
         <div class="container">
             <div class="tabs_nav">
-                <button>Описание</button>
-                <button>Где можно посмотреть?</button>
+                <button class="tabs-btn-project" type="button" data-tab="#tab_project_1">Описание</button>
+                <button class="tabs-btn-project" type="button" data-tab="#tab_project_2">Где можно посмотреть?</button>
             </div>
-            <div class="description-block">
-                <p class="description">Приключенческий телесериал освещает сцены безработицы, долгов и незаконных товарных перевозок. Главному герою, утонувшему в долгах, 
-                    придется пройти немало трудностей ради собственного благополучия. В сериале также отражены предательство и самоотверженная деятельность полицейского.</p>
+            <div class="project-desc-mat" id="tab_project_1">
+                <div class="project-description">
+                    <p class="description">Приключенческий телесериал освещает сцены безработицы, долгов и незаконных товарных перевозок. Главному герою, утонувшему в долгах, 
+                        придется пройти немало трудностей ради собственного благополучия. В сериале также отражены предательство и самоотверженная деятельность полицейского.</p>
+                </div>
             </div>
-            <div class="video" id="video" data-src="https://www.youtube.com/embed/D5RnHKhZzoI?si=EKCutzj1gvaiBal6">
-               
+            <div class="project-desc-mat" id="tab_project_2">
+                <div class="video" id="video" data-src="https://www.youtube.com/embed/D5RnHKhZzoI?si=EKCutzj1gvaiBal6"></div>
             </div>
         </div>
     </div>
 
     <div class="actors-block">
         <div class="container">
-            <h1 class="title_block">Актеры</h1>
+            <h1 class="actors_title_block">Актеры</h1>
             <div class="actors-image-block">
                 <div class="actors-item">
                     <div class="actors-view">
@@ -156,21 +160,24 @@
         <div class="container">
             <div class="frame-item">
                 <div class="project-images">
-                    <img src="../img/img_serial/2024-03-19 07.34.06.jpg" alt="">
+                    <img src="../img/img_serial/2024-03-19 07.34.06.jpg" alt="" class="gallery-project">
                 </div>
                 <div class="project-images">
-                    <img src="../img/img_serial/2024-03-19 07.34.10.jpg" alt="">
+                    <img src="../img/img_serial/2024-03-19 07.34.10.jpg" alt="" class="gallery-project">
                 </div>
                 <div class="project-images">
-                    <img src="../img/img_serial/2024-03-19 07.34.13.jpg" alt="">
+                    <img src="../img/img_serial/2024-03-19 07.34.13.jpg" alt="" class="gallery-project">
                 </div>
                 <div class="project-images">
-                    <img src="../img/img_serial/2024-03-19 07.34.16.jpg" alt="">
+                    <img src="../img/img_serial/2024-03-19 07.34.16.jpg" alt="" class="gallery-project"> 
                 </div>
             </div>
         </div>
     </div>
+
     
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         window.addEventListener('DOMContentLoaded', function() {
             var videos = document.querySelectorAll('.video');
@@ -189,6 +196,8 @@
             });
         });
     </script>
+    <script src="../js/app.js"></script>
+    
 </body>
 </html>
 

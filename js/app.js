@@ -28,6 +28,40 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.tabs-btn').click();
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Скрипт для работы с вкладками
+    const tabsBtnProject = document.querySelectorAll(".tabs-btn-project");
+    const tabsItemsProject = document.querySelectorAll(".project-desc-mat");
+
+    tabsBtnProject.forEach(onTabClick);
+
+    function onTabClick(item) {
+        item.addEventListener("click", function() {
+            let currentBtn = item;
+            let tabId = currentBtn.getAttribute("data-tab");
+            let currentTab = document.querySelector(tabId);
+
+            if (!currentBtn.classList.contains('active-tabs')) {
+                tabsBtnProject.forEach(function(item) {
+                    item.classList.remove('active-tabs');
+                });
+
+                tabsItemsProject.forEach(function(item) {
+                    item.classList.remove('active-tabs');
+                });
+
+                currentBtn.classList.add('active-tabs');
+                currentTab.classList.add('active-tabs');
+            }
+        });
+    }
+    document.querySelector('.tabs-btn-project').click();
+});
+
+
+
+
+
 // Скрипт для добавления класса active-link активной ссылке в навигационном меню
 document.addEventListener("DOMContentLoaded", function() {
     var navLinks = document.querySelectorAll(".nav-a"); // Получаем все ссылки в навигационном меню
