@@ -1,0 +1,121 @@
+.project-open {
+    font-family: $font-accent-two;
+    background-color: $dark;
+    padding: 50px 0;
+    display: flex; /* Добавляем flex для управления расположением элементов */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+}
+
+.project-inner {
+    display: flex; /* Делаем внутренний блок flex для управления расположением элементов */
+    max-width: 1200px; /* Максимальная ширина контейнера */
+}
+
+.project-poster {
+    flex: 1; /* Занимаем все доступное пространство слева от информации о проекте */
+    margin-right: 20px; /* Добавляем небольшое расстояние между постером и информацией */
+}
+
+.project-details {
+    flex: 2; /* Занимаем две части относительно постера (1/3 от общей ширины) */
+}
+
+.project-poster-open {
+    max-height: 350px;
+    width: auto; /* Позволяет изображению подстраиваться под максимальную высоту */
+    max-width: 100%; /* Изображение не будет превышать ширину родительского блока */
+}
+
+.project-row-info {
+    margin-bottom: 10px; /* Добавляем небольшое расстояние между информационными блоками */
+}
+
+.sumb-applic {
+    border: 1px solid $white;
+    font-size: 18px;
+    padding: 10px 20px; /* Увеличиваем горизонтальный отступ кнопки */
+    background-color: transparent; /* Прозрачный фон */
+    color: $white; /* Белый цвет текста */
+    cursor: pointer; /* Изменяем курсор при наведении */
+}
+
+.sumb-applic:hover {
+    background-color: $white; /* Изменяем фон кнопки при наведении */
+    color: $dark; /* Изменяем цвет текста при наведении */
+}
+
+
+.project-description{
+    color: $dark;
+    margin-top: 100px;
+}
+
+
+.actors-block{
+    font-family: $font-accent-two;
+    color: $dark;
+    margin-top: 100px;
+}
+
+.img-actors{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden; 
+}
+.act-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+
+.actors-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.actors-view{
+    align-items: center;
+    text-align: center;
+    margin: 25px 25px;
+}
+
+.actors_info{
+    margin: 10px 0;
+}
+
+.actors_info p {
+    margin: 5px 0;
+}
+
+
+.frame-project-block{
+    margin-top: 100px;
+}
+
+.frame-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*VIDEO*/
+.video-youtube{
+    width: 100%;
+    padding-top: 50%;
+    background-color: $dark;
+    position: relative;
+}
+
+.video-youtube iframe{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
