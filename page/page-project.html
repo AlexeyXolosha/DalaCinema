@@ -48,27 +48,27 @@
                     </div>
                     <div class="project-info">
                         <div class="project-row-info">
-                            <div class="project-row-title">Жанр: </div>
+                            <div class="project-row-title">Жанр </div>
                             <div class="project-row-subtitle">Боевик</div>
                         </div>
                         <div class="project-row-info">
-                            <div class="project-row-title">Время: </div>
+                            <div class="project-row-title">Время </div>
                             <div class="project-row-subtitle">46 минут</div>
                         </div>
                         <div class="project-row-info">
-                            <div class="project-row-title">Количество серий: </div>
+                            <div class="project-row-title">Количество </div>
                             <div class="project-row-subtitle">4 серии</div>
                         </div>
                         <div class="project-row-info">
-                            <div class="project-row-title">Генеральный продюсер: </div>
+                            <div class="project-row-title">Генеральный директор</div>
                             <div class="project-row-subtitle">Жалын Тлеубергенов</div>
                         </div>
                         <div class="project-row-info">
-                            <div class="project-row-title">Режиссер-постановщик: </div>
+                            <div class="project-row-title">Режиссер </div>
                             <div class="project-row-subtitle">Думан Еркімбек</div>
                         </div>
                         <div class="project-row-info">
-                            <div class="project-row-title">Оператор-постановщик: </div>
+                            <div class="project-row-title">Оператор </div>
                             <div class="project-row-subtitle">Айдос Сүлеймен</div>
                         </div>
                     </div>
@@ -90,10 +90,8 @@
                 <p class="description">Приключенческий телесериал освещает сцены безработицы, долгов и незаконных товарных перевозок. Главному герою, утонувшему в долгах, 
                     придется пройти немало трудностей ради собственного благополучия. В сериале также отражены предательство и самоотверженная деятельность полицейского.</p>
             </div>
-            <div class="video-youtube">
-                <iframe src="https://www.youtube.com/embed/D5RnHKhZzoI?si=zyQ2P9cLijxfCpVR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
+            <div class="video" id="video" data-src="https://www.youtube.com/embed/D5RnHKhZzoI?si=EKCutzj1gvaiBal6">
+               
             </div>
         </div>
     </div>
@@ -173,7 +171,24 @@
         </div>
     </div>
     
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var videos = document.querySelectorAll('.video');
 
+            videos.forEach(function(video) {
+                video.addEventListener("click", function() {
+                    if(video.classList.contains('ready')){
+                        return;
+                    }
+
+                    video.classList.add('ready');
+
+                    var src = video.dataset.src;
+                    video.insertAdjacentHTML('afterbegin', '<iframe src="'+ src +'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
+                }); 
+            });
+        });
+    </script>
 </body>
 </html>
 
