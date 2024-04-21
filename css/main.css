@@ -1105,7 +1105,6 @@ a {
 
 .project-poster-open {
   height: 500px;
-  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -1297,7 +1296,7 @@ a {
 }
 
 .frame-project-block {
-  margin-top: 100px;
+  margin: 100px 0;
   overflow: hidden;
 }
 
@@ -1319,7 +1318,8 @@ a {
 .gallery-project {
   display: block;
   width: 100%;
-  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /*VIDEO*/

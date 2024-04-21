@@ -157,47 +157,80 @@
 
 
     <div class="frame-project-block">
-        <div class="container">
-            <div class="frame-item">
-                <div class="project-images">
-                    <img src="../img/img_serial/2024-03-19 07.34.06.jpg" alt="" class="gallery-project">
+        <div class="container swiper">
+            <div class="frame-item swiper-wrapper">
+                <div class="project-images swiper-slide">
+                    <img src="../img/photo_gallery/whatsapp-image-2022-12-06-at-17.32.24-1.jpeg" alt="" class="gallery-project">
                 </div>
-                <div class="project-images">
-                    <img src="../img/img_serial/2024-03-19 07.34.10.jpg" alt="" class="gallery-project">
+                <div class="project-images swiper-slide">
+                    <img src="../img/photo_gallery/whatsapp-image-2022-12-06-at-17.32.24-2.jpeg" alt="" class="gallery-project">
                 </div>
-                <div class="project-images">
-                    <img src="../img/img_serial/2024-03-19 07.34.13.jpg" alt="" class="gallery-project">
+                <div class="project-images swiper-slide">
+                    <img src="../img/photo_gallery/whatsapp-image-2022-12-06-at-17.32.24-1.jpeg" alt="" class="gallery-project">
                 </div>
-                <div class="project-images">
-                    <img src="../img/img_serial/2024-03-19 07.34.16.jpg" alt="" class="gallery-project"> 
+                <div class="project-images swiper-slide">
+                    <img src="../img/photo_gallery/whatsapp-image-2022-12-06-at-17.32.24-2.jpeg" alt="" class="gallery-project">
                 </div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </div>
 
-    
 
+    <footer class="footer">
+        <div class="container">
+            <a class="logo-footer" href="">
+                <p>DalaCinema</p>
+            </a>
+            <div class="footer_item">
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Кастинги</a></li>
+                    <li><a href="#">Проекты</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            var videos = document.querySelectorAll('.video');
-
-            videos.forEach(function(video) {
-                video.addEventListener("click", function() {
-                    if(video.classList.contains('ready')){
-                        return;
-                    }
-
-                    video.classList.add('ready');
-
-                    var src = video.dataset.src;
-                    video.insertAdjacentHTML('afterbegin', '<iframe src="'+ src +'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-                }); 
-            });
-        });
-    </script>
     <script src="../js/app.js"></script>
-    
+
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                var videos = document.querySelectorAll('.video');
+
+                videos.forEach(function(video) {
+                    video.addEventListener("click", function() {
+                        if(video.classList.contains('ready')){
+                            return;
+                        }
+
+                        video.classList.add('ready');
+
+                        var src = video.dataset.src;
+                        video.insertAdjacentHTML('afterbegin', '<iframe src="'+ src +'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
+                    }); 
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var swiper_project = new Swiper('.swiper', {
+                    direction: 'horizontal',
+                    slidesPerView: 3, // Change to the number of visible slides you want
+                    spaceBetween: 10,
+                    loop: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    centeredSlides: true, // Добавьте параметр для центрирования слайдов
+                    initialSlide: 3,
+                });
+            });
+        </script>
 </body>
 </html>
 
