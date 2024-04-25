@@ -1,6 +1,10 @@
 .block-add{
+    padding: 100px;
+}
+
+.main-add-element{
     font-family: $font-accent-two;
-    padding-top: 100px;
+    min-height: 100px;
     background-color: $dark;
 }
 
@@ -73,7 +77,6 @@
     width: 100%;
 }
 
-/*Button Style*/
 .btn-add{
     width: 300px;
     border: 1px solid $white;

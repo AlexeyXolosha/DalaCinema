@@ -8,5 +8,200 @@
 </head>
 <body>
     
+    <header class="header">
+        <div class="container">
+            <div class="header_top">
+                <div class="header_top_row">
+                    <a href="#!" class="logo">
+                        <img src="../../img/logo.png" alt="DalaCinema" class="logo-img">
+                    </a>
+                    <div class="header_nav">
+                        <nav class="nav">
+                            <ul class="nav-ul">
+                                <li><a href="../../index.html" class="nav-a">Главная</a></li>
+                                <li><a href="../page/news.html" class="nav-a">Новости</a></li>
+                                <li><a href="../page/list-project.html" class="nav-a">Проекты</a></li>
+                                <li><a href="#!" class="nav-a">О нас</a></li>
+                                <li><a href="../page/login.html" class="nav-a">Вход</a></li>       
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </header>
+
+    <main class="main-add-element">
+        <section class="add-project">
+            <div class="container">
+                <div class="add-project-inner">
+                    <form id="FormId" action="/add_projects" method="post" enctype="multipart/form-data">
+                        <div class="project-section-info-project">
+                            <p class="title-add-element">Название</p>
+                            <input type="text" id="name" name="name"><br>
+                        </div>
+                        <div class="project-section-info-project">
+                            <p class="title-add-element">Описание:</p>
+                            <textarea id="description" name="description"></textarea><br>                
+                        </div> 
+                       <div class="project-section-add-image">
+                            <label for="poster" class="input-label">Выберите вертикальное изображение постера:</label><br>
+                            <input type="file" id="poster" name="poster" accept="image/*" title="Выбранный файл">                       </div>
+                       <div class="project-section-add-image">
+                            <label for="poster-gor" class="input-label">Выберите горизонтальное изображение постера:</label><br>
+                            <input type="file" id="poster" name="poster" accept="image/*" title="Выбранный файл">                       </div>
+                       <div class="project-section-selector-type-project">
+                            <p class="title-add-element">Выберите тип проекта:</p>
+                            <div class="input-radio">
+                                <input type="radio" id="movie" name="type" value="movie" onclick="chekMovie()" checked>
+                                <label for="movie">Фильм</label><br>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" id="series" name="type" value="series" onclick="chekSeries()">
+                                <label for="series">Сериал</label><br>
+                            </div>
+                        </div>
+                        <div class="project-section-selector-type-project">
+                            <p class="title-add-element">Статус: </p>
+                            <div class="input-radio">
+                                <input type="radio" id="status_ready" name="status" value="ready" onclick="statysReadyAdd()" checked>
+                                <label for="status_ready">Готово</label><br>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" id="status_in_production" name="status" value="in_production" onclick="statysInProduction()">
+                                <label for="status_in_production">В производстве</label><br>
+                            </div>
+                        </div>
+                        <div class="project-section-selector-type-project">
+                            <p class="title-add-element">Жанр:</p>
+                        </div>
+                        <div class="project-section-selector-type-project">
+                            <p class="title-add-element">Кастинг:</p>
+                            <div class="input-radio">
+                                <input type="radio" id="casting_disabled" name="casting" value="no" onclick="castingDisabled()" checked>
+                                <label for="casting_disabled">Выключен</label><br>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" id="casting_enabled" name="casting" value="yes" onclick="castingEnabled()">
+                                <label for="casting_enabled">Включен</label><br>
+                            </div>
+                        </div>
+                        <div class="project-section-info-project">
+                            <p class="title-add-element">Видимость проекта: </p>
+                            <div class="input-radio">
+                                <input type="radio" id="visibility_enabled" name="visibility" value="on" checked>
+                                <label for="visibility_enabled">Включена</label><br>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" id="visibility_disabled" name="visibility" value="off">
+                                <label for="visibility_disabled">Выключена</label><br>
+                            </div>
+                        </div>
+                        <div class="project-section-info-project">
+                            <p class="title-add-element">Комментарий к кастингу:</p>
+                            <textarea id="casting_comment" name="casting_comment" class="pop-text-area"></textarea><br>                
+                        </div>
+                        <div class="project-section-add">
+                            <p class="title-add-element">Добавить продюсера</p>
+                            <button type="button" id="addProducerButton" class="btn41-43 btn-41">Добавить</button>
+                        </div>
+                        <div class="project-section-add">
+                            <p class="title-add-element">Добавить режиссера</p>
+                            <button type="button" id="addRezhisserButton" class="btn41-43 btn-41">Добавить</button>
+                        </div>
+                        <div class="project-section-add">
+                            <p class="title-add-element">Добавить оператора</p>
+                            <button type="button" id="addOperatorButton" class="btn41-43 btn-41">Добавить</button>
+                        </div>
+                        <div class="project-section-add">
+                            <p class="title-add-element">Добавить актера</p>
+                            <button type="button" id="addActorsButton" class="btn41-43 btn-41">Добавить</button>
+                        </div>
+                        <div id="project-section-add">
+                            <label for="duration">Длительность:</label><br>
+                            <input type="time" id="duration" name="duration" placeholder="01:23"><br>
+                        </div>
+                        <div id="project-section-add">
+                            <p class="title-add-element">Дата завершения:</p>
+                            <input type="date" id="completion_date" name="completion_date" class="comp_date"><br>
+                        </div>
+                        <div id="project-section-add">
+                            <label for="duration">Количество серий</label><br>
+                            <input type="number" id="parts" name="parts" value="0"><br>
+                        </div>
+                        <div class="project-section-info-project">
+                            <p class="title-add-element">Ссылка на материал</p>
+                            <input type="text" class="url-link-youtube" id="link" name="link"><br>
+                        </div>
+                        <div id="gallery-div"></div>
+                        <div class="project-section-photo-add">
+                            <input type="button" class="btn-add-gallery" value="Добавить фотографии..." onclick="addObGalleryDiv()">
+                            <input type="submit" value="Загрузить проект" class="btn-add-gallery">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="pop_up" id="producerPopupContainer">
+            <div class="pop_up_container">
+                <div class="pop_up_body" id="producerPopup">
+                    <p class="title-add-element">Выберите продюсера</p>
+                    <table class="tabel-pop-up-add">
+                        <input type="text" id="searchInputProducersAdd" oninput="filterPoisk('searchInputProducersAdd', '#popup_add_prod_producer_spicok')" placeholder="Поиск по продюсерам...">
+                        <tbody id="popup_add_prod_producer_spicok">
+                            <tr>
+                                <td>
+                                    <div class="images-td-preview">
+                                        <img src="../../img/actors/Edil Ramazan.jpg" class="tabel-pop-up-images">
+                                    </div>
+                                </td>
+                                <td><p id="select-chel-add-{producer_id_placeholder}">Андрей Михайлович Алексеев</p></td>
+                                <td><input id="chec-p-{producer_id_placeholder}" type="checkbox" name="selectedProducers[]" value="{producer_id_placeholder}" onchange="addFIOFILMTEAMADD('{producer_surname_placeholder} {producer_name_placeholder} {producer_otchestvo_placeholder}', {producer_id_placeholder}, 'p', 'chec-p-{producer_id_placeholder}')"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="images-td-preview">
+                                        <img src="../../img/actors/Edil Ramazan.jpg" class="tabel-pop-up-images">
+                                    </div>
+                                </td>
+                                <td><p id="select-chel-add-{producer_id_placeholder}">Андрей Михайлович Алексеев</p></td>
+                                <td><input id="chec-p-{producer_id_placeholder}" type="checkbox" name="selectedProducers[]" value="{producer_id_placeholder}" onchange="addFIOFILMTEAMADD('{producer_surname_placeholder} {producer_name_placeholder} {producer_otchestvo_placeholder}', {producer_id_placeholder}, 'p', 'chec-p-{producer_id_placeholder}')"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="images-td-preview">
+                                        <img src="../../img/actors/Edil Ramazan.jpg" class="tabel-pop-up-images">
+                                    </div>
+                                </td>
+                                <td><p id="select-chel-add-{producer_id_placeholder}">Андрей Михайлович Алексеев</p></td>
+                                <td><input id="chec-p-{producer_id_placeholder}" type="checkbox" name="selectedProducers[]" value="{producer_id_placeholder}" onchange="addFIOFILMTEAMADD('{producer_surname_placeholder} {producer_name_placeholder} {producer_otchestvo_placeholder}', {producer_id_placeholder}, 'p', 'chec-p-{producer_id_placeholder}')"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="images-td-preview">
+                                        <img src="../../img/actors/Edil Ramazan.jpg" class="tabel-pop-up-images">
+                                    </div>
+                                </td>
+                                <td><p id="select-chel-add-{producer_id_placeholder}">Андрей Михайлович Алексеев</p></td>
+                                <td><input id="chec-p-{producer_id_placeholder}" type="checkbox" name="selectedProducers[]" value="{producer_id_placeholder}" onchange="addFIOFILMTEAMADD('{producer_surname_placeholder} {producer_name_placeholder} {producer_otchestvo_placeholder}', {producer_id_placeholder}, 'p', 'chec-p-{producer_id_placeholder}')"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn-adm-pop-up">Добавить</button>
+                    <button class="btn-adm-pop-up" id="closedBtnUp">Отменить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function addObGalleryDiv(){
+            document.getElementById('gallery-div').insertAdjacentHTML('beforeend', `<div class="add-galery-project"><input type="file" name="foto-gallery[]" accept="image/*"></div>`)
+        }
+        function addObGalleryDivPopup(){
+            document.getElementById('gallery-div-popup').insertAdjacentHTML('beforeend', `<div><input type="file" name="foto-gallery-popup[]" accept="image/*"></div>`)
+        }
+    </script>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

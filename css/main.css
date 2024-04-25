@@ -102,6 +102,7 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   width: 1290px;
+  overflow: hidden;
 }
 
 a {
@@ -499,14 +500,17 @@ a {
 }
 
 .pop_up {
-  display: none;
   width: 100%;
   height: 100%;
   position: fixed;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: transparent;
   z-index: 2;
+  -webkit-transform: translateY(-44.5%) scale(0);
+          transform: translateY(-44.5%) scale(0);
+  -webkit-transition: opacity 0.4s ease-in-out, background-color 0.1s ease-in-out;
+  transition: opacity 0.4s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 .pop_up_edit {
@@ -525,7 +529,9 @@ a {
 }
 
 .pop_up.active {
-  display: block;
+  -webkit-transform: translateY(0%) scale(100%);
+          transform: translateY(0%) scale(100%);
+  background-color: #111111;
 }
 
 .pop_up_container {
@@ -539,14 +545,14 @@ a {
 .pop_up_body {
   font-family: "Montserrat", sans-serif;
   margin: auto;
-  width: 500px;
+  width: 700px;
   background-color: #111111;
   border-radius: 10px;
   text-align: center;
   padding: 70px 20px 70px 20px;
   position: relative;
   overflow-y: auto;
-  max-height: 70vh;
+  max-height: 80vh;
 }
 
 .pop-admin-form {
@@ -580,16 +586,237 @@ a {
 
 .btn-adm-pop-up {
   display: block;
+  min-width: 140px;
+  min-height: 30px;
+  margin: 10px auto; /* изменено на auto */
+  padding: 5px 50px;
   border: 1px solid #FFFFFF;
-  padding: 10px 10px;
-  width: 200px;
-  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .pop_up-images {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.pop-section-add-image {
+  margin: 10px 10px;
+}
+
+.tabel-pop-up-add {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.tabel-pop-up-add tr {
+  background-color: #282828;
+}
+
+.tabel-pop-up-add tr, .tabel-pop-up-add th, .tabel-pop-up-add td {
+  padding: 10px 20px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.images-td-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.tabel-pop-up-images {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.project-section-photo-add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.project-section-photo-add .btn-add-gallery {
+  color: #111111;
+  background-color: #FFFFFF;
+  padding: 10px 50px;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.add-project {
+  padding: 100px;
+}
+
+.add-project-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+}
+
+.project-section-info-project {
+  margin: 20px 0;
+}
+.project-section-info-project input {
+  width: 100%;
+  border: 1px solid #91a198;
+  border-radius: 3px;
+  outline: none !important;
+  padding: 10px 10px;
+}
+.project-section-info-project textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #91a198;
+  border-radius: 3px;
+  outline: none !important;
+  padding: 10px 10px;
+  resize: none;
+}
+
+.title-add-element {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.project-section-add-image {
+  margin: 20px 0;
+}
+.project-section-add-image input[type=file] {
+  display: none;
+}
+.project-section-add-image .input-label {
+  position: relative;
+  border: 2px dashed #FFFFFF;
+  border-radius: 3px;
+  padding: 10px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-section-add {
+  margin: 20px 0;
+}
+.project-section-add button {
+  width: 100%;
+  min-height: 50px;
+  margin: 10px 0;
+  padding: 5px 50px;
+  border: 1px solid #FFFFFF;
+  font-size: 18px;
+  font-weight: 600;
+}
+.project-section-add button:hover {
+  background-color: #FFFFFF;
+}
+
+.comp_date {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc; /* Change border color as needed */
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* Ensures padding and border are included in the width */
+  font-size: 16px;
+}
+
+.input-radio input[type=radio] {
+  display: none;
+}
+.input-radio label {
+  position: relative;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.input-radio label::before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  border: 3px solid #FFFFFF;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.input-radio input[type=radio]:checked + label {
+  background-color: #FFFFFF;
+  color: #111111;
+}
+.input-radio input[type=radio]:checked + label::before {
+  border: 10px solid #111111;
+}
+
+.btn41-43 {
+  text-decoration: none;
+  padding: 10px 50px;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-41 {
+  border: 2px solid rgb(255, 255, 255);
+  z-index: 1;
+  color: white;
+}
+
+.btn-41:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn-41:hover {
+  color: rgb(0, 0, 0);
+}
+
+.btn-41:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn-41:active {
+  top: 2px;
 }
 
 .intro_inner_page {
@@ -823,8 +1050,12 @@ a {
 }
 
 .block-add {
+  padding: 100px;
+}
+
+.main-add-element {
   font-family: "Montserrat", sans-serif;
-  padding-top: 100px;
+  min-height: 100px;
   background-color: #111111;
 }
 
@@ -917,7 +1148,6 @@ a {
   width: 100%;
 }
 
-/*Button Style*/
 .btn-add {
   width: 300px;
   border: 1px solid #FFFFFF;
@@ -1106,10 +1336,15 @@ a {
 
 .project-poster {
   margin-right: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  max-width: 300px;
+  max-height: 500px;
 }
 
 .project-poster-open {
-  height: 500px;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -1150,7 +1385,7 @@ a {
 }
 
 .project-row-title {
-  width: 180px;
+  width: 150px;
   font-size: 14px;
 }
 
@@ -1159,6 +1394,7 @@ a {
       -ms-flex: 1;
           flex: 1;
   font-size: 18px;
+  white-space: nowrap;
 }
 
 .project-row-title {
@@ -1175,6 +1411,7 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
+  max-width: 400px;
 }
 
 .sumb-applic {
@@ -1316,12 +1553,14 @@ a {
 }
 
 .project-images {
+  max-height: 300px;
   width: 25%; /* Для четырех изображений на строку */
   padding: 25px;
 }
 
 .gallery-project {
   display: block;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
