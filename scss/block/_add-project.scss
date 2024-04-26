@@ -5,6 +5,9 @@
 
 .add-project-inner{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     flex-wrap: nowrap;
     width: 100%;
 }
@@ -74,8 +77,20 @@
     padding: 12px;
     border: 1px solid #ccc; /* Change border color as needed */
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding and border are included in the width */
-    font-size: 16px;
+}
+
+.comp_time{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc; /* Change border color as needed */
+    border-radius: 4px;
+}
+
+.number_seria{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc; /* Change border color as needed */
+    border-radius: 4px;
 }
 
 .input-radio{
@@ -154,3 +169,72 @@
   }
 
   
+  .project-section-photo-add{
+    display: flex;
+    flex-direction: column;
+    .btn-add-gallery{
+        color: $dark;
+        background-color: $white;
+        padding: 10px 50px;
+        font-weight: 500;
+        font-size: 18px;
+        margin: 10px 0;
+        cursor: pointer;
+    } 
+    .btn-add-gallery:hover{
+        opacity: 0.9;
+    }
+}
+
+/*Filter*/
+
+
+.filter-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-select{
+    padding: 15px 0;
+}
+
+.filter-block select{
+
+}
+
+.filter-button{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/*Tabel*/
+.project-tabel-inner{
+    margin: 0 auto; 
+    overflow: auto;
+}
+
+.table-container-project{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.table-container-project tr{
+    background-color: #282828;
+}
+
+.table-container-project td, th{
+    text-align: center;
+    padding: 30px 25px;   
+    white-space: nowrap;
+}
+
+.tabel-project-image{
+    max-width: 150px; 
+    max-height: 150px; 
+    border-radius: 5px; 
+}
+
+

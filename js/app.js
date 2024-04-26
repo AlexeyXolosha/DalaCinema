@@ -1,116 +1,115 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Скрипт для работы с вкладками
-    const tabsBtn = document.querySelectorAll(".tabs-btn");
-    const tabsItems = document.querySelectorAll(".gallery-tabs-cadr");
-
-    tabsBtn.forEach(onTabClick);
-
-    function onTabClick(item) {
-        item.addEventListener("click", function() {
-            let currentBtn = item;
-            let tabId = currentBtn.getAttribute("data-tab");
-            let currentTab = document.querySelector(tabId);
-
-            if (!currentBtn.classList.contains('active-tabs')) {
-                tabsBtn.forEach(function(item) {
-                    item.classList.remove('active-tabs');
-                });
-
-                tabsItems.forEach(function(item) {
-                    item.classList.remove('active-tabs');
-                });
-
-                currentBtn.classList.add('active-tabs');
-                currentTab.classList.add('active-tabs');
-            }
-        });
-    }
-    document.querySelector('.tabs-btn').click();
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Скрипт для работы с вкладками
-    const tabsBtnProject = document.querySelectorAll(".tabs-btn-project");
-    const tabsItemsProject = document.querySelectorAll(".project-desc-mat");
-
-    tabsBtnProject.forEach(onTabClick);
-
-    function onTabClick(item) {
-        item.addEventListener("click", function() {
-            let currentBtn = item;
-            let tabId = currentBtn.getAttribute("data-tab");
-            let currentTab = document.querySelector(tabId);
-
-            if (!currentBtn.classList.contains('active-tabs')) {
-                tabsBtnProject.forEach(function(item) {
-                    item.classList.remove('active-tabs');
-                });
-
-                tabsItemsProject.forEach(function(item) {
-                    item.classList.remove('active-tabs');
-                });
-
-                currentBtn.classList.add('active-tabs');
-                currentTab.classList.add('active-tabs');
-            }
-        });
-    }
-    document.querySelector('.tabs-btn-project').click();
-});
-
-
-
-
-
-// Скрипт для добавления класса active-link активной ссылке в навигационном меню
-document.addEventListener("DOMContentLoaded", function() {
-    var navLinks = document.querySelectorAll(".nav-a"); // Получаем все ссылки в навигационном меню
-    var currentUrl = window.location.href; // Получаем текущий URL страницы
-
-    navLinks.forEach(function(link) {
-        // Проверяем, есть ли у ссылки атрибут href
-        if (link.hasAttribute("href")) {
-            var href = link.getAttribute("href");
-            // Проверяем, соответствует ли URL ссылки текущему URL страницы
-            if (currentUrl.includes(href)) {
-                link.classList.add("active-link"); // Добавляем класс active-link, если ссылка соответствует текущей странице
-            }
-        }
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var navLinks = document.querySelectorAll(".profile-link"); // Получаем все ссылки в навигационном меню
-    var currentUrl = window.location.href; // Получаем текущий URL страницы
-
-    navLinks.forEach(function(link) {
-        // Проверяем, есть ли у ссылки атрибут href
-        if (link.hasAttribute("href")) {
-            var href = link.getAttribute("href");
-            // Проверяем, соответствует ли URL ссылки текущему URL страницы
-            if (currentUrl.includes(href)) {
-                link.classList.add("active-link"); // Добавляем класс active-link, если ссылка соответствует текущей странице
-            }
-        }
-    });
-});
-
-
 function initializePopUp(openBtnId, closeBtnId, popUpId) {
     const openBtn = document.getElementById(openBtnId);
     const closeBtn = document.getElementById(closeBtnId);
     const popUp = document.getElementById(popUpId);
 
-    openBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        popUp.classList.add('active');
-    });
+    // Проверяем, существует ли кнопка открытия
+    if (openBtn) {
+        openBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            popUp.classList.add('active');
+        });
+    }
 
-    closeBtn.addEventListener('click', () => {
-        popUp.classList.remove('active');
-    });
+    // Проверяем, существует ли кнопка закрытия
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            popUp.classList.remove('active');
+        });
+    }
 }
 
-initializePopUp('addProducerButton', 'closedBtnUp', 'producerPopupContainer');
 
+// Вызовы функций для каждой страницы
+document.addEventListener("DOMContentLoaded", function() {
+    initializePopUp('editGenre', 'closedGenreBtnUp', 'genrepopUPContainer');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Вызов функции для страницы genre
+    initializePopUp('addProducerButton', 'closedGenreBtnUp', 'producerPopupContainer');
+});
+
+// Обработчик для работы с вкладками
+document.addEventListener("DOMContentLoaded", function() {
+    const tabsBtn = document.querySelectorAll(".tabs-btn");
+    const tabsItems = document.querySelectorAll(".gallery-tabs-cadr");
+
+    // Функция для активации вкладки по умолчанию
+    function activateDefaultTab() {
+        // Устанавливаем индекс вкладки по умолчанию
+        const defaultTabIndex = 0; // Например, первая вкладка
+
+        // Активируем кнопку вкладки по умолчанию
+        tabsBtn[defaultTabIndex].classList.add('active-tabs');
+        
+        // Активируем соответствующую вкладку
+        tabsItems[defaultTabIndex].classList.add('active-tabs');
+    }
+
+    // Активируем вкладку по умолчанию при загрузке страницы
+    activateDefaultTab();
+
+    // Добавляем обработчики кликов для вкладок
+    tabsBtn.forEach(function(item) {
+        item.addEventListener("click", onTabClick.bind(null, item, tabsBtn, tabsItems));
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const tabsBtnProject = document.querySelectorAll(".tabs-btn-project");
+    const tabsItemsProject = document.querySelectorAll(".project-desc-mat");
+
+    // Функция для активации вкладки по умолчанию
+    function activateDefaultTab() {
+        // Проверяем, существуют ли элементы
+        if (tabsBtnProject.length > 0 && tabsItemsProject.length > 0) {
+            // Устанавливаем индекс вкладки по умолчанию
+            const defaultTabIndex = 0; // Например, первая вкладка
+
+            // Активируем кнопку вкладки по умолчанию
+            tabsBtnProject[defaultTabIndex].classList.add('active-tabs');
+            
+            // Активируем соответствующую вкладку
+            tabsItemsProject[defaultTabIndex].classList.add('active-tabs');
+        }
+    }
+
+    activateDefaultTab();
+
+    tabsBtnProject.forEach(function(item) {
+        item.addEventListener("click", onTabClick.bind(null, item, tabsBtnProject, tabsItemsProject));
+    });
+});
+
+function onTabClick(item, allBtns, allTabs) {
+    const tabId = item.getAttribute("data-tab");
+    const currentTab = document.querySelector(tabId);
+
+    if (!item.classList.contains('active-tabs')) {
+        allBtns.forEach(function(btn) {
+            btn.classList.remove('active-tabs');
+        });
+
+        allTabs.forEach(function(tab) {
+            tab.classList.remove('active-tabs');
+        });
+
+        item.classList.add('active-tabs');
+        currentTab.classList.add('active-tabs');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll(".nav-a, .profile-link");
+    const currentUrl = window.location.href;
+
+    navLinks.forEach(function(link) {
+        if (link.hasAttribute("href")) {
+            const href = link.getAttribute("href");
+            if (currentUrl.includes(href)) {
+                link.classList.add("active-link");
+            }
+        }
+    });
+});

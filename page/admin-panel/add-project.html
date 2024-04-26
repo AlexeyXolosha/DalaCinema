@@ -31,6 +31,14 @@
         </div>
     </header>
 
+    <div class="accordian">
+        <div class="container">
+            <div class="acoordian-inner">
+
+            </div>
+        </div>
+    </div>
+
     <main class="main-add-element">
         <section class="add-project">
             <div class="container">
@@ -46,10 +54,14 @@
                         </div> 
                        <div class="project-section-add-image">
                             <label for="poster" class="input-label">Выберите вертикальное изображение постера:</label><br>
-                            <input type="file" id="poster" name="poster" accept="image/*" title="Выбранный файл">                       </div>
+                            <input type="file" id="poster" name="poster" accept="image/*" title="Выбранный файл"> 
+                            <span id="custom-text-file">Файл не выбран</span>                      
+                        </div>
                        <div class="project-section-add-image">
                             <label for="poster-gor" class="input-label">Выберите горизонтальное изображение постера:</label><br>
-                            <input type="file" id="poster" name="poster" accept="image/*" title="Выбранный файл">                       </div>
+                            <input type="file" id="poster-gor" name="posterG" accept="image/*">
+                            <span>Файл не выбран</span>                      
+                        </div>
                        <div class="project-section-selector-type-project">
                             <p class="title-add-element">Выберите тип проекта:</p>
                             <div class="input-radio">
@@ -117,23 +129,25 @@
                             <p class="title-add-element">Добавить актера</p>
                             <button type="button" id="addActorsButton" class="btn41-43 btn-41">Добавить</button>
                         </div>
-                        <div id="project-section-add">
+                        <div class="project-section-add">
                             <label for="duration">Длительность:</label><br>
-                            <input type="time" id="duration" name="duration" placeholder="01:23"><br>
+                            <input type="time" id="duration" name="duration" placeholder="01:23" class="comp_time"><br>
                         </div>
-                        <div id="project-section-add">
+                        <div class="project-section-add">
                             <p class="title-add-element">Дата завершения:</p>
                             <input type="date" id="completion_date" name="completion_date" class="comp_date"><br>
                         </div>
-                        <div id="project-section-add">
-                            <label for="duration">Количество серий</label><br>
-                            <input type="number" id="parts" name="parts" value="0"><br>
+                        <div class="project-section-add">
+                            <p class="title-add-element">Количество серий:</p>
+                            <input type="number" id="parts" name="parts" value="0" class="number_seria"><br>
                         </div>
                         <div class="project-section-info-project">
                             <p class="title-add-element">Ссылка на материал</p>
                             <input type="text" class="url-link-youtube" id="link" name="link"><br>
                         </div>
-                        <div id="gallery-div"></div>
+                        <div id="gallery-div">
+                            <p class="title-add-element">Галерея проекта</p>
+                        </div>
                         <div class="project-section-photo-add">
                             <input type="button" class="btn-add-gallery" value="Добавить фотографии..." onclick="addObGalleryDiv()">
                             <input type="submit" value="Загрузить проект" class="btn-add-gallery">
@@ -193,14 +207,126 @@
                 </div>
             </div>
         </div>
+
+        <section class="filter">
+            <div class="container">
+                <form id="filterFormProd" action="/admin/projects" method="GET">
+                    <div class="filter-select-search">
+                        <p>Введите название для поиска:</p>
+                        <input id="search-inp" type="text" name="search" list="searchListProd" placeholder="Введите название" value="">
+                        <datalist id="searchListProd"></datalist>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-select">
+                            <p>Выберите тип видеоматериала:</p>
+                            <select id="type-search-prod" name="type">
+                                <option value="all">Все типы</option>
+                                <option value="movie">Фильм</option>
+                                <option value="series">Сериал</option>
+                            </select>
+                        </div>
+                        <div class="filter-select">
+                            <p>Статус видеоматериала:</p>
+                            <select id="status-search-prod" name="status">
+                                <option value="all">Все типы</option>
+                                <option value="ready">Готово</option>
+                                <option value="in_production">В производстве</option>
+                            </select>
+                        </div>
+                        <div class="filter-select">
+                            <p>Кастинг видеоматериала:</p>
+                            <select id="casting-search-prod" name="casting">
+                                <option value="all">Все</option>
+                                <option value="yes">Включен</option>
+                                <option value="no">Выключен</option>
+                            </select>
+                        </div>
+                        <div class="filter-select">
+                            <p>Видимость видеоматериала:</p>
+                            <select id="visibility-search-prod" name="visibility">
+                                <option value="all">Все</option>
+                                <option value="on">Включен</option>
+                                <option value="off">Выключен</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-button">
+                        <button type="button" class="btn41-43 btn-41" onclick="filterFormProdBut()">Применить</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="project-input-tabel">
+            <div class="container">
+                <div class="project-tabel-inner">
+                    <table class="table-container-project">
+                        <thead>
+                            <tr>
+                                <th>Название</th>
+                                <th>Верт. постер</th>
+                                <th>Горизонт. постер</th>
+                                <th>Статус</th>
+                                <th>Кастинг</th>
+                                <th>Видимость</th>
+                                <th>Изменить</th>
+                                <th>Удалить</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p>Соңғы аялдама</p></td>
+                                <td><img src="../../img/project/постер 2.png" alt="" class="tabel-project-image"></td>
+                                <td><img src="../../img/project/посте(1).jpg" alt="" class="tabel-project-image"></td>
+                                <td>Завершен</td>
+                                <td>Неактивен</td>
+                                <td>Активен</td>
+                                <td><button id='edit_but_popup_open'>Редактировать</button></td>
+                                <td><button>Удалить</button></td>
+                            </tr>
+                            <tr>
+                                <td><p>Соңғы аялдама</p></td>
+                                <td><img src="../../img/project/постер 2.png" alt="" class="tabel-project-image"></td>
+                                <td><img src="../../img/project/посте(1).jpg" alt="" class="tabel-project-image"></td>
+                                <td>Завершен</td>
+                                <td>Неактивен</td>
+                                <td>Активен</td>
+                                <td><button id='edit_but_popup_open'>Редактировать</button></td>
+                                <td><button>Удалить</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
     </main>
+
     <script>
         function addObGalleryDiv(){
             document.getElementById('gallery-div').insertAdjacentHTML('beforeend', `<div class="add-galery-project"><input type="file" name="foto-gallery[]" accept="image/*"></div>`)
-        }
+        };
         function addObGalleryDivPopup(){
             document.getElementById('gallery-div-popup').insertAdjacentHTML('beforeend', `<div><input type="file" name="foto-gallery-popup[]" accept="image/*"></div>`)
-        }
+        };
+
+            const inputElements = document.querySelectorAll('input[type="file"]');
+
+            const spanElements = document.querySelectorAll('.project-section-add-image span');
+
+            // Навешиваем обработчик события изменения значения input на каждый элемент input
+            inputElements.forEach((inputElement, index) => {
+                inputElement.addEventListener("change", function() {
+                    // Проверяем, был ли выбран файл
+                    if (inputElement.files.length > 0) {
+                        // Если файл был выбран, заменяем текст в соответствующем элементе span на имя выбранного файла
+                        spanElements[index].textContent = inputElement.files[0].name;
+                    } else {
+                        // Если файл не был выбран, отображаем стандартный текст
+                        spanElements[index].textContent = "Файл не выбран";
+                    }
+                });
+            });
+
     </script>
     <script src="../../js/app.js"></script>
 </body>
