@@ -1,7 +1,10 @@
-.add-project{
+.add-project {
     padding: 100px;
 }
 
+.genre{
+    padding: 100px 0 ;
+}
 
 .add-project-inner{
     display: flex;
@@ -9,7 +12,6 @@
     align-items: center;
     text-align: center;
     flex-wrap: nowrap;
-    width: 100%;
 }
 
 .project-section-info-project{
@@ -55,7 +57,6 @@
     }
 }
 
-
 .project-section-add{
     margin: 20px 0;
     button{
@@ -92,6 +93,58 @@
     border: 1px solid #ccc; /* Change border color as needed */
     border-radius: 4px;
 }
+
+.project-sector-checkbox{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 550px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check-box-project{
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    input[type="checkbox"]{
+        appearance: none;
+        -webkit-appearance: none;
+        height: 40px;
+        width: 40px;
+        background-color: $white;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        outline: none;
+    }
+    label{
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+
+
+    }
+    input[type="checkbox"]::after{
+        position: absolute;
+        content: "";
+        background-color: $dark;
+        height: 20px;
+        width: 20px;
+        top: calc(50% - 10px); /* половина высоты плюс смещение */
+        left: calc(50% - 10px); /* половина ширины плюс смещение */
+        border-radius: 5px;
+        display: none;
+    }
+    input[type="checkbox"]:hover{
+        background-color: #f1eaea;
+    }
+    input[type="checkbox"]:checked::after{
+        display: block;
+    }
+}
+
 
 .input-radio{
     input[type="radio"]{
@@ -168,8 +221,7 @@
     top: 2px;
   }
 
-  
-  .project-section-photo-add{
+.project-section-photo-add{
     display: flex;
     flex-direction: column;
     .btn-add-gallery{
@@ -188,6 +240,23 @@
 
 /*Filter*/
 
+.filter-search-block {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.search-block-filter{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: $dark;
+    background-color: #f7f5f5;
+    border-radius: 10px;
+    input{
+        margin-left: 10px;
+    }
+}
 
 .filter-block{
     display: flex;
@@ -196,15 +265,20 @@
 }
 
 .filter-select{
-    padding: 15px 0;
-}
-
-.filter-block select{
-
+    select{
+        margin: 10px 0;
+        border: 1px solid $white;
+        border-radius: 3px;
+        height: 40px;
+        width: 160px;
+        padding: 5px 10px;
+        background-color: $white;
+        color: $dark;
+    }
 }
 
 .filter-button{
-    margin: 20px;
+    margin: 10px;
     display: flex;
     justify-content: center;
 }
@@ -237,4 +311,13 @@
     border-radius: 5px; 
 }
 
-
+.output-info-add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-subtitle-add{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}

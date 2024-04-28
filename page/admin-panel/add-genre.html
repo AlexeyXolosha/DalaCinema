@@ -32,31 +32,28 @@
     </header>
 
     <main class="main-add-element">
-        <div class="block-add">
+        <section class="project-input-tabel genre">
             <div class="container">
-                <div class="admin-block-add-inner">
-                    <div class="input-block">
-                        <h1>Добавить жанр</h1>
-                        <input type="text" class="input-genre">
-                        <button class="btn41-43 btn-41">Добавить</button>
-                    </div>
-                    <div class="table-container">
-                        <table class="tabel-admin">
+                <div class="project-tabel-inner">
+                    <table class="table-container-project">
+                        <thead>
                             <tr>
                                 <th>Жанр</th>
                                 <th>Delete</th>
                                 <th>Change</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
-                                <td><input type="text" placeholder="Боевик"></td>
+                                <td>Боевик</td>
                                 <td><button>Удалить</button></td>
                                 <td><button type="button" id="editGenre">Изменить</button></td>
                             </tr>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
+        </section>
         
         <div class="pop_up" id="genrepopUPContainer">
             <div class="pop_up_container">
@@ -67,8 +64,8 @@
                             <input type="text">
                         </div>
                         <div class="btn-inner">
-                            <button class="btn-adm-pop-up">Изменить</button>
-                            <button class="btn-adm-pop-up" id="closedGenreBtnUp">Отменить</button>                        
+                            <button class="btn41-43 btn-41">Изменить</button>
+                            <button class="btn41-43 btn-41" id="closedGenreBtnUp">Отменить</button>                        
                         </div>
                     </div>
                 </div>

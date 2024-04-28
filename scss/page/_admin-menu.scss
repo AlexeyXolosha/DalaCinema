@@ -1,34 +1,18 @@
-.block-add{
-    padding: 100px;
-}
-
 .main-add-element{
     font-family: $font-accent-two;
     min-height: 100px;
     background-color: $dark;
 }
 
-.admin-block-add-inner{
+.block-btn{
+    padding: 100px;
+}
+
+.block-inner{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
-.admin-filter-block{
-    display: flex;
-    justify-content: space-between;
-}
-
-.search-block input{
-    margin-right: 20px;
-    border-bottom: 1px solid $white;
-}
-
-.search-block button{
-    border: 1px solid $white;
-}
-
-/*Input CSS*/
 
 .input-block{
     display: flex;
@@ -43,43 +27,4 @@
     height: 35px;
     padding: 10px 10px;
     margin: 10px 0;
-}
-
-/*Таблица*/
-.table-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    width: 100%;
-}
-
-.tabel-admin{
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
-}
-
-.tabel-admin tr{
-    background-color: #282828;
-}
-
-.tabel-admin tr, .tabel-admin th, .tabel-admin td{
-    padding: 25px 30px;
-    white-space: nowrap;
-    text-align: center; /* Добавлено для выравнивания текста по центру */
-}
-
-.tabel-admin input{
-    text-align: center;
-}
-
-.tabel-admin-img{
-    width: 100%;
-}
-
-.btn-add{
-    width: 300px;
-    border: 1px solid $white;
-    padding: 10px 15px;
-    align-self: center;
 }

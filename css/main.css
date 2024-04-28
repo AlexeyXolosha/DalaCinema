@@ -499,23 +499,18 @@ a {
 }
 
 .pop_up {
+  display: none;
   width: 100%;
   height: 100%;
   position: fixed;
   left: 0;
   top: 0;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 2;
-  -webkit-transform: translateY(-44.5%) scale(0);
-          transform: translateY(-44.5%) scale(0);
-  -webkit-transition: opacity 0.4s ease-in-out, background-color 0.1s ease-in-out;
-  transition: opacity 0.4s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 .pop_up.active {
-  -webkit-transform: translateY(0%) scale(100%);
-          transform: translateY(0%) scale(100%);
-  background-color: #111111;
+  display: block;
 }
 
 .pop_up_container {
@@ -557,26 +552,99 @@ a {
   margin-bottom: 20px;
 }
 
-.pop-role-section select {
-  margin-left: 20px;
-  background-color: #111111;
+.pop-role-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-
-.pop-section-input-add input {
-  border-bottom: 1px solid #FFFFFF;
-  padding: 10px 5px;
-  margin: 5px 0;
-}
-
-.btn-adm-pop-up {
-  display: block;
-  min-width: 140px;
-  min-height: 30px;
-  margin: 10px auto;
-  padding: 5px 50px;
-  border: 1px solid #FFFFFF;
+.pop-role-section label {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
+  margin-right: 15px;
+}
+.pop-role-section select {
+  margin: 10px 0;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  height: 35px;
+  width: 160px;
+  padding: 5px 10px;
+  background-color: #FFFFFF;
+  color: #111111;
+}
+
+.pop-section-input-add {
+  margin: 10px 0;
+}
+.pop-section-input-add .pop-title-add-element {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.pop-section-input-add input {
+  width: 100%;
+  border: 1px solid #91a198;
+  border-radius: 3px;
+  outline: none !important;
+  padding: 10px 10px;
+}
+
+.pop-section-add-image {
+  margin: 20px 0;
+}
+.pop-section-add-image input[type=file] {
+  display: none;
+}
+.pop-section-add-image .input-label {
+  position: relative;
+  border: 2px dashed #FFFFFF;
+  border-radius: 3px;
+  padding: 10px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pop-section-image .image-output-popup {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.pop-section-image .img-popup {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.pop-section-image .delete-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #000000;
+  background-color: white; /* Белый фон */
+  font-size: 32px; /* размер иконки удаления */
+  font-weight: 500;
+  border-radius: 25%; /* Для круглой кнопки */
+  cursor: pointer; /* изменение формы курсора при наведении */
+}
+
+.btn-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
 }
 
 .pop_up-images {
@@ -626,6 +694,10 @@ a {
   padding: 100px;
 }
 
+.genre {
+  padding: 100px 0;
+}
+
 .add-project-inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -639,7 +711,6 @@ a {
   text-align: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  width: 100%;
 }
 
 .project-section-info-project {
@@ -723,6 +794,63 @@ a {
   padding: 12px;
   border: 1px solid #ccc; /* Change border color as needed */
   border-radius: 4px;
+}
+
+.project-sector-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 550px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.check-box-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 20px;
+}
+.check-box-project input[type=checkbox] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  height: 40px;
+  width: 40px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+.check-box-project label {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.check-box-project input[type=checkbox]::after {
+  position: absolute;
+  content: "";
+  background-color: #111111;
+  height: 20px;
+  width: 20px;
+  top: calc(50% - 10px); /* половина высоты плюс смещение */
+  left: calc(50% - 10px); /* половина ширины плюс смещение */
+  border-radius: 5px;
+  display: none;
+}
+.check-box-project input[type=checkbox]:hover {
+  background-color: #f1eaea;
+}
+.check-box-project input[type=checkbox]:checked::after {
+  display: block;
 }
 
 .input-radio input[type=radio] {
@@ -825,6 +953,33 @@ a {
 }
 
 /*Filter*/
+.filter-search-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+}
+
+.search-block-filter {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  color: #111111;
+  background-color: #f7f5f5;
+  border-radius: 10px;
+}
+.search-block-filter input {
+  margin-left: 10px;
+}
+
 .filter-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -837,12 +992,19 @@ a {
           align-items: center;
 }
 
-.filter-select {
-  padding: 15px 0;
+.filter-select select {
+  margin: 10px 0;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  height: 40px;
+  width: 160px;
+  padding: 5px 10px;
+  background-color: #FFFFFF;
+  color: #111111;
 }
 
 .filter-button {
-  margin: 20px;
+  margin: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -877,6 +1039,24 @@ a {
   max-width: 150px;
   max-height: 150px;
   border-radius: 5px;
+}
+
+.output-info-add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.project-subtitle-add {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .intro_inner_page {
@@ -1109,48 +1289,25 @@ a {
   color: green;
 }
 
-.block-add {
-  padding: 100px;
-}
-
 .main-add-element {
   font-family: "Montserrat", sans-serif;
   min-height: 100px;
   background-color: #111111;
 }
 
-.admin-block-add-inner {
+.block-btn {
+  padding: 100px;
+}
+
+.block-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.admin-filter-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.search-block input {
-  margin-right: 20px;
-  border-bottom: 1px solid #FFFFFF;
-}
-
-.search-block button {
-  border: 1px solid #FFFFFF;
-}
-
-/*Input CSS*/
 .input-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1169,51 +1326,6 @@ a {
   height: 35px;
   padding: 10px 10px;
   margin: 10px 0;
-}
-
-/*Таблица*/
-.table-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 50px;
-  width: 100%;
-}
-
-.tabel-admin {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-}
-
-.tabel-admin tr {
-  background-color: #282828;
-}
-
-.tabel-admin tr, .tabel-admin th, .tabel-admin td {
-  padding: 25px 30px;
-  white-space: nowrap;
-  text-align: center; /* Добавлено для выравнивания текста по центру */
-}
-
-.tabel-admin input {
-  text-align: center;
-}
-
-.tabel-admin-img {
-  width: 100%;
-}
-
-.btn-add {
-  width: 300px;
-  border: 1px solid #FFFFFF;
-  padding: 10px 15px;
-  -ms-flex-item-align: center;
-      align-self: center;
 }
 
 * {

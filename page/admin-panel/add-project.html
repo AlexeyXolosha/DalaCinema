@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>DalaCinema - Добавить проект</title>
 </head>
 <body>
@@ -40,6 +41,7 @@
     </div>
 
     <main class="main-add-element">
+        
         <section class="add-project">
             <div class="container">
                 <div class="add-project-inner">
@@ -84,8 +86,38 @@
                                 <label for="status_in_production">В производстве</label><br>
                             </div>
                         </div>
-                        <div class="project-section-selector-type-project">
-                            <p class="title-add-element">Жанр:</p>
+                        <div class="project-section-selector-type-project-check">
+                            <p class="title-add-element">Жанры:</p>
+                            <div class="project-sector-checkbox">
+                                <div class="check-box-project">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Драма</label>
+                                </div>
+                                <div class="check-box-project">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Боевик</label>
+                                </div>
+                                <div class="check-box-project">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Боевик</label>
+                                </div>
+                                <div class="check-box-project">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Боевик</label>
+                                </div>
+                                <div class="check-box-project">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Боевик</label>
+                                </div>
+                                <div class="check-box-project">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Боевик</label>
+                                </div>
+                                <div class="check-box-project">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Боевик</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="project-section-selector-type-project">
                             <p class="title-add-element">Кастинг:</p>
@@ -117,6 +149,9 @@
                             <p class="title-add-element">Добавить продюсера</p>
                             <button type="button" id="addProducerButton" class="btn41-43 btn-41">Добавить</button>
                         </div>
+                        <div class="output-info-add" id="producer-selected">
+                            <p class="project-subtitle-add">Андрей Михайлович Алексеев</p>
+                        </div>
                         <div class="project-section-add">
                             <p class="title-add-element">Добавить режиссера</p>
                             <button type="button" id="addRezhisserButton" class="btn41-43 btn-41">Добавить</button>
@@ -130,7 +165,7 @@
                             <button type="button" id="addActorsButton" class="btn41-43 btn-41">Добавить</button>
                         </div>
                         <div class="project-section-add">
-                            <label for="duration">Длительность:</label><br>
+                            <p class="title-add-element">Длительность</p>
                             <input type="time" id="duration" name="duration" placeholder="01:23" class="comp_time"><br>
                         </div>
                         <div class="project-section-add">
@@ -156,7 +191,7 @@
                 </div>
             </div>
         </section>
-
+        
         <div class="pop_up" id="producerPopupContainer">
             <div class="pop_up_container">
                 <div class="pop_up_body" id="producerPopup">
@@ -202,8 +237,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button class="btn-adm-pop-up">Добавить</button>
-                    <button class="btn-adm-pop-up" id="closedBtnUp">Отменить</button>
                 </div>
             </div>
         </div>
@@ -211,10 +244,12 @@
         <section class="filter">
             <div class="container">
                 <form id="filterFormProd" action="/admin/projects" method="GET">
-                    <div class="filter-select-search">
-                        <p>Введите название для поиска:</p>
-                        <input id="search-inp" type="text" name="search" list="searchListProd" placeholder="Введите название" value="">
-                        <datalist id="searchListProd"></datalist>
+                    <div class="filter-search-block">
+                        <div class="search-block-filter">
+                            <span class="material-symbols-outlined">search</span>
+                            <input id="search-inp" type="text" name="search" list="searchListProd" placeholder="Введите название проекта" value="">
+                            <datalist id="searchListProd"></datalist>
+                        </div>
                     </div>
                     <div class="filter-block">
                         <div class="filter-select">
