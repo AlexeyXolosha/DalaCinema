@@ -99,9 +99,11 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   padding: 0 15px;
-  width: 1290px;
+  max-width: 1290px;
   overflow: hidden;
 }
 
@@ -139,7 +141,7 @@ a {
 }
 
 .logo-img {
-  height: 55px;
+  max-height: 55px;
 }
 
 .nav {
@@ -240,6 +242,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
 }
 
 .news-main {
@@ -465,8 +468,7 @@ a {
   margin-bottom: 200px;
   font-family: "Montserrat", sans-serif;
 }
-
-.pagination-a {
+.pagination .pagination-a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -649,18 +651,18 @@ a {
   margin: 10px 10px;
 }
 
-.tabel-pop-up-add {
+.table-pop-up-add {
   display: table;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 10px;
 }
 
-.tabel-pop-up-add tr {
+.table-pop-up-add tr {
   background-color: #282828;
 }
 
-.tabel-pop-up-add tr, .tabel-pop-up-add th, .tabel-pop-up-add td {
+.table-pop-up-add tr, .table-pop-up-add th, .table-pop-up-add td {
   padding: 10px 20px;
   white-space: nowrap;
   text-align: center;
@@ -673,7 +675,7 @@ a {
   overflow: hidden;
 }
 
-.tabel-pop-up-images {
+.table-pop-up-images {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -886,6 +888,7 @@ a {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 
 .btn-41 {
@@ -1297,9 +1300,8 @@ a {
   padding: 5px 10px;
 }
 
-/*Tabel*/
-/*Tabel*/
-.project-tabel-inner {
+/*table*/
+.project-table-inner {
   margin: 0 auto;
   overflow: auto;
 }
@@ -1325,7 +1327,7 @@ a {
   height: 100px;
 }
 
-.tabel-image {
+.table-image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1717,8 +1719,7 @@ a {
 }
 
 .project-images {
-  max-height: 300px;
-  width: 25%; /* Для четырех изображений на строку */
+  max-height: 500px;
   padding: 25px;
 }
 
