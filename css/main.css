@@ -695,7 +695,7 @@ a {
 }
 
 .genre {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .add-project-inner {
@@ -1013,34 +1013,6 @@ a {
           justify-content: center;
 }
 
-/*Tabel*/
-.project-tabel-inner {
-  margin: 0 auto;
-  overflow: auto;
-}
-
-.table-container-project {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-}
-
-.table-container-project tr {
-  background-color: #282828;
-}
-
-.table-container-project td, th {
-  text-align: center;
-  padding: 30px 25px;
-  white-space: nowrap;
-}
-
-.tabel-project-image {
-  max-width: 150px;
-  max-height: 150px;
-  border-radius: 5px;
-}
-
 .output-info-add {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1295,20 +1267,17 @@ a {
   background-color: #111111;
 }
 
-.block-btn {
+.block-add {
   padding: 100px;
 }
 
 .block-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.input-block {
+.block-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1316,16 +1285,56 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 500px;
-  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.input-genre {
-  background-color: #FFFFFF;
+.input-admin {
   color: #111111;
-  height: 35px;
-  padding: 10px 10px;
-  margin: 10px 0;
+  padding: 10px 0;
+}
+.input-admin input {
+  background-color: #FFFFFF;
+  height: 40px;
+  width: 500px;
+  padding: 5px 10px;
+}
+
+/*Tabel*/
+/*Tabel*/
+.project-tabel-inner {
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.table-container-project {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table-container-project tr {
+  background-color: #282828;
+}
+
+.table-container-project td, th {
+  text-align: center;
+  padding: 30px 25px;
+  white-space: nowrap;
+}
+
+.img-td {
+  width: 100px;
+  height: 100px;
+}
+
+.tabel-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 
 * {

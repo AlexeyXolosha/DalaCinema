@@ -3,7 +3,7 @@
 }
 
 .genre{
-    padding: 100px 0 ;
+    padding: 50px 0 ;
 }
 
 .add-project-inner{
@@ -281,34 +281,6 @@
     margin: 10px;
     display: flex;
     justify-content: center;
-}
-
-/*Tabel*/
-.project-tabel-inner{
-    margin: 0 auto; 
-    overflow: auto;
-}
-
-.table-container-project{
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
-}
-
-.table-container-project tr{
-    background-color: #282828;
-}
-
-.table-container-project td, th{
-    text-align: center;
-    padding: 30px 25px;   
-    white-space: nowrap;
-}
-
-.tabel-project-image{
-    max-width: 150px; 
-    max-height: 150px; 
-    border-radius: 5px; 
 }
 
 .output-info-add{

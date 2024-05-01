@@ -78,19 +78,6 @@
     max-width: 400px;
 }
 
-.sumb-applic {
-    border: 1px solid $white;
-    font-size: 18px;
-    padding: 10px 20px; 
-    background-color: transparent; 
-    color: $white; 
-}
-
-.sumb-applic:hover {
-    background-color: $white; /* Изменяем фон кнопки при наведении */
-    color: $dark; /* Изменяем цвет текста при наведении */
-}
-
 /*Проект БЛОК ОПИСАНИЯ И ВИДЕО*/
 .project-block-material{
     color: $dark;
