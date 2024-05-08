@@ -947,6 +947,29 @@ a {
   opacity: 0.9;
 }
 
+.pop-up-add-gallery {
+  margin: 50px 0;
+}
+.pop-up-add-gallery p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.btn-save-project {
+  color: #111111;
+  background-color: #FFFFFF;
+  padding: 10px 50px;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 10px 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-save-project:hover {
+  opacity: 0.9;
+}
+
 /*Filter*/
 .filter-search-block {
   display: -webkit-box;
@@ -1189,8 +1212,6 @@ a {
 }
 
 .profile-data {
-  width: 100%;
-  max-width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1198,6 +1219,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 75%;
   margin: 0 auto;
   margin-top: 100px;
 }
@@ -1211,22 +1233,11 @@ a {
           justify-content: space-between;
   background-color: #282828;
   border-radius: 5px;
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 20px 20px;
 }
 
 .profile-applications {
-  width: 100%;
-  max-width: 700px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 0 auto;
   margin-top: 100px;
 }
@@ -1235,6 +1246,8 @@ a {
   display: table;
   border-collapse: separate;
   border-spacing: 0 10px;
+  table-layout: fixed;
+  text-align: center;
 }
 
 .tb-pro-applica tr {
@@ -1244,10 +1257,8 @@ a {
 .tb-pro-applica td, .tb-pro-applica th {
   padding: 20px 75px;
   white-space: nowrap;
-  text-align: center; /* Добавлено для выравнивания текста по центру */
 }
 
-/* Дополнительные классы для цветов статусов */
 .status-pending {
   color: yellow;
 }

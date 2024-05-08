@@ -30,27 +30,21 @@ document.addEventListener("DOMContentLoaded", function() {
     initializePopUp('addProducerButton', 'closedGenreBtnUp', 'producerPopupContainer');
 });
 
-// Обработчик для работы с вкладками
+
 document.addEventListener("DOMContentLoaded", function() {
     const tabsBtn = document.querySelectorAll(".tabs-btn");
     const tabsItems = document.querySelectorAll(".gallery-tabs-cadr");
 
-    // Функция для активации вкладки по умолчанию
     function activateDefaultTab() {
-        // Устанавливаем индекс вкладки по умолчанию
-        const defaultTabIndex = 0; // Например, первая вкладка
+        const defaultTabIndex = 0; 
 
-        // Активируем кнопку вкладки по умолчанию
         tabsBtn[defaultTabIndex].classList.add('active-tabs');
         
-        // Активируем соответствующую вкладку
         tabsItems[defaultTabIndex].classList.add('active-tabs');
     }
 
-    // Активируем вкладку по умолчанию при загрузке страницы
     activateDefaultTab();
 
-    // Добавляем обработчики кликов для вкладок
     tabsBtn.forEach(function(item) {
         item.addEventListener("click", onTabClick.bind(null, item, tabsBtn, tabsItems));
     });
@@ -60,17 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const tabsBtnProject = document.querySelectorAll(".tabs-btn-project");
     const tabsItemsProject = document.querySelectorAll(".project-desc-mat");
 
-    // Функция для активации вкладки по умолчанию
     function activateDefaultTab() {
-        // Проверяем, существуют ли элементы
         if (tabsBtnProject.length > 0 && tabsItemsProject.length > 0) {
-            // Устанавливаем индекс вкладки по умолчанию
-            const defaultTabIndex = 0; // Например, первая вкладка
-
-            // Активируем кнопку вкладки по умолчанию
+            const defaultTabIndex = 0; 
+            
             tabsBtnProject[defaultTabIndex].classList.add('active-tabs');
             
-            // Активируем соответствующую вкладку
             tabsItemsProject[defaultTabIndex].classList.add('active-tabs');
         }
     }
@@ -100,16 +89,3 @@ function onTabClick(item, allBtns, allTabs) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const navLinks = document.querySelectorAll(".nav-a, .profile-link");
-    const currentUrl = window.location.href;
-
-    navLinks.forEach(function(link) {
-        if (link.hasAttribute("href")) {
-            const href = link.getAttribute("href");
-            if (currentUrl.includes(href)) {
-                link.classList.add("active-link");
-            }
-        }
-    });
-});

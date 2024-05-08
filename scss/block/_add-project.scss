@@ -239,6 +239,29 @@
     }
 }
 
+.pop-up-add-gallery{
+    margin: 50px 0;
+    p{
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+.btn-save-project{
+    color: $dark;
+    background-color: $white;
+    padding: 10px 50px;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-save-project:hover{
+    opacity: 0.9;
+}
+
 /*Filter*/
 
 .filter-search-block {
