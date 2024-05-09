@@ -9,28 +9,21 @@
 </head>
 <body>
     
-    <header class="header">
+    <nav class="nav">
         <div class="container">
-            <div class="header_top">
-                <div class="header_top_row">
-                    <a href="#!" class="logo">
-                        <img src="../../img/logo.png" alt="DalaCinema" class="logo-img">
-                    </a>
-                    <div class="header_nav">
-                        <nav class="nav">
-                            <ul class="nav-ul">
-                                <li><a href="../../index.html" class="nav-a">Главная</a></li>
-                                <li><a href="../page/news.html" class="nav-a">Новости</a></li>
-                                <li><a href="../page/list-project.html" class="nav-a">Проекты</a></li>
-                                <li><a href="#!" class="nav-a">О нас</a></li>
-                                <li><a href="../page/login.html" class="nav-a">Вход</a></li>       
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>    
+            <div class="nav-row">
+                <a href="#" class="logo">
+                    <img src="./img/logo.png" alt="">
+                </a>
+                <ul class="nav-list">
+                    <li><a class="nav-list-link" href="">Главная</a></li>
+                    <li><a class="nav-list-link" href="">Проекты</a></li>
+                    <li><a class="nav-list-link" href="">О Нас</a></li>
+                    <li><a class="nav-list-link" href="">Вход</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main class="main-add-element">
         <section class="add-project">
@@ -236,31 +229,7 @@
             </div>
         </div>
 
-        <div class="pop_edit_add" id="popup_edit_prod_producer">
-            <div class="pop_up_container">
-                <div class="pop_up_body_add" id="producerPopup">
-                    <p class="title-add-element">Выберите продюсера</p>
-                    <table class="table-pop-up-add">
-                        <div class="filter-search-block project-search-m">
-                            <div class="search-block-filter">
-                                <input type="text" id="searchInputProducersAdd" oninput="filterPoisk('searchInputProducersAdd', '#popup_add_prod_producer_spicok')" placeholder="Поиск по продюсерам...">
-                            </div>
-                        </div>
-                        <tbody id="popup_add_prod_producer_spicok">
-                            <tr>
-                                <td>
-                                    <div class="images-td-preview">
-                                        <img src="../../img/actors/Edil Ramazan.jpg" class="table-pop-up-images">
-                                    </div>
-                                </td>
-                                <td><p id="select-chel-add-{producer_id_placeholder}">Андрей Михайлович Алексеев</p></td>
-                                <td><input id="chec-p-{producer_id_placeholder}" type="checkbox" name="selectedProducers[]" value="{producer_id_placeholder}" onchange="addFIOFILMTEAMADD('{producer_surname_placeholder} {producer_name_placeholder} {producer_otchestvo_placeholder}', {producer_id_placeholder}, 'p', 'chec-p-{producer_id_placeholder}')"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+     
 
         <section class="filter">
             <div class="container">
@@ -526,6 +495,32 @@
                         </table>
                     </div>
                 </div>      
+        </div>
+
+        <div class="pop_edit_add" id="popup_edit_prod_producer">
+            <div class="pop_up_container">
+                <div class="pop_up_body_add" id="producerPopup">
+                    <p class="title-add-element">Выберите продюсера</p>
+                    <table class="table-pop-up-add">
+                        <div class="filter-search-block project-search-m">
+                            <div class="search-block-filter">
+                                <input type="text" id="searchInputProducersAdd" oninput="filterPoisk('searchInputProducersAdd', '#popup_add_prod_producer_spicok')" placeholder="Поиск по продюсерам...">
+                            </div>
+                        </div>
+                        <tbody id="popup_add_prod_producer_spicok">
+                            <tr>
+                                <td>
+                                    <div class="images-td-preview">
+                                        <img src="../../img/actors/Edil Ramazan.jpg" class="table-pop-up-images">
+                                    </div>
+                                </td>
+                                <td><p id="select-chel-add-{producer_id_placeholder}">Андрей Михайлович Алексеев</p></td>
+                                <td><input id="chec-p-{producer_id_placeholder}" type="checkbox" name="selectedProducers[]" value="{producer_id_placeholder}" onchange="addFIOFILMTEAMADD('{producer_surname_placeholder} {producer_name_placeholder} {producer_otchestvo_placeholder}', {producer_id_placeholder}, 'p', 'chec-p-{producer_id_placeholder}')"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </main>
 

@@ -101,93 +101,74 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
   padding: 0 15px;
   max-width: 1290px;
-  overflow: hidden;
 }
 
 a {
   color: #FFFFFF;
 }
 
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  min-height: 85px;
-  background-color: #111111;
-  padding-top: 15px;
-  font-weight: 700;
-}
-
-.header_top_row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.logo-img {
-  max-height: 55px;
-}
-
 .nav {
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  background-color: #111111;
+  padding: 20px 0;
 }
 
-.nav-ul {
+.nav-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 32px;
-     -moz-column-gap: 32px;
-          column-gap: 32px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  row-gap: 30px;
 }
 
-.nav-a {
-  color: #ffffff; /* цвет по умолчанию */
-  position: relative;
-  padding-bottom: 5px;
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.nav-list-link {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
   -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; /* добавляем плавное изменение всем свойствам */
-  text-decoration: none; /* убираем подчеркивание */
+  transition: all 0.3s ease;
+  position: relative;
+  color: #FFFFFF;
 }
 
-.nav-a:hover {
-  color: #1C93FF; /* изменяем цвет при наведении */
-  font-size: 1.1em; /* увеличиваем размер текста */
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* добавляем тень */
+.nav-list-link:hover {
+  color: #1C93FF;
+  font-size: 1.1em;
 }
 
-.nav-a.active-link::after {
+.nav-list-link.nav-link-active::after {
   content: "";
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #FFFFFF; /* использование переменной */
+  background-color: #FFFFFF;
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
+}
+
+.logo {
+  max-width: 70px;
+  max-height: 70px;
 }
 
 .intro {
@@ -208,8 +189,6 @@ a {
 }
 
 .intro_inner {
-  width: 100%;
-  max-width: 700px;
   margin: 0 auto;
   text-align: center;
   -webkit-box-align: center;
@@ -299,8 +278,12 @@ a {
 }
 
 .img-news {
-  display: block;
-  max-width: 100%;
+  width: 620px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .btn_inner {
@@ -346,7 +329,7 @@ a {
 }
 
 .project_images {
-  max-height: 700px;
+  width: 250px;
   height: 500px;
   border-radius: 10px;
   -o-object-fit: cover;
@@ -609,6 +592,7 @@ a {
 
 .pop-section-input-add {
   margin: 10px 0;
+  width: 50%;
 }
 .pop-section-input-add .pop-title-add-element {
   margin: 10px 0;
@@ -740,8 +724,6 @@ a {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 .project-section-info-project {
@@ -1170,18 +1152,10 @@ a {
   z-index: 2;
 }
 
-.pop_up_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
 .pop_up_film_edit_body {
   font-family: "Montserrat", sans-serif;
-  margin: auto;
-  max-width: 600px;
+  margin: 50px 50px;
+  width: 500px;
   background-color: #111111;
   border-radius: 10px;
   text-align: center;
@@ -1194,8 +1168,8 @@ a {
 .pop_edit_add {
   display: none;
   position: fixed;
-  right: 75px;
-  top: 25%;
+  right: 50px;
+  top: 50px;
   z-index: 3;
 }
 
@@ -1212,6 +1186,115 @@ a {
   max-height: 80vh;
 }
 
+@media (max-width: 1290px) {
+  .container {
+    max-width: 970px;
+  }
+  .news-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .title_block {
+    text-align: center;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+  .nav-list {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .gallery {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .gallery-tabs-cadr {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .project-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .project-intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 10px 0;
+  }
+  .project-poster-open {
+    width: 300px;
+    height: 500px;
+  }
+  .project-row-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .project-row-title {
+    width: unset !important;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+  .project-images {
+    padding: 15px !important;
+  }
+  .img-actors {
+    width: 75px !important;
+    height: 75px !important;
+  }
+  .actors-view {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 20px 10px !important;
+  }
+}
 .intro_inner_page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1655,12 +1738,16 @@ a {
   font-family: "Montserrat", sans-serif;
   background-color: #111111;
   padding: 50px 0;
+}
+
+.project-inner {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; /* Добавляем flex для управления расположением элементов */
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; /* Центрируем содержимое по горизонтали */
+  display: flex;
+}
+
+.project-poster {
+  margin-right: 20px;
 }
 
 .project-details {
@@ -1676,24 +1763,9 @@ a {
           justify-content: space-between;
 }
 
-.project-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 1200px;
-}
-
-.project-poster {
-  margin-right: 20px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  max-width: 300px;
-  max-height: 500px;
-}
-
 .project-poster-open {
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -1719,23 +1791,13 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 20px 0;
-  position: relative; /* Добавляем позиционирование для элемента .project-row-subtitle */
-}
-
-.project-row-title {
-  width: 150px;
-  font-size: 14px;
 }
 
 .project-row-subtitle {
@@ -1749,6 +1811,7 @@ a {
 .project-row-title {
   margin-right: 10px;
   font-size: 18px;
+  width: 150px;
 }
 
 .btn-block {
@@ -2069,4 +2132,34 @@ a {
 
 .btn-application:hover {
   opacity: 0.8;
+}
+
+.profile-actors {
+  background-color: #111111;
+  min-height: 500px;
+}
+
+.profile-actors-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  max-width: 100%;
+  margin-top: 100px;
+}
+
+.profile-actors-left img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }

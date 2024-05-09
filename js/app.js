@@ -18,7 +18,7 @@ function initializePopUp(openBtnId, closeBtnId, popUpId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    initializePopUp('editGenre', 'closedGenreBtnUp', 'genrepopUPContainer');
+    initializePopUp('openBtnUP', 'closedGenreBtnUp', 'popup_genre');
 });
 
 document.addEventListener("DOMContentLoaded", function() {

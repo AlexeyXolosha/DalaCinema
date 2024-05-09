@@ -1,0 +1,23 @@
+.profile-actors{
+    background-color: $dark;
+    min-height: 500px;
+}
+
+.profile-actors-content{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    max-width: 100%;
+    margin-top: 100px;
+}
+
+.profile-actors-left{
+    img{
+        display: block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
