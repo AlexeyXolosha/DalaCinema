@@ -144,21 +144,7 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            var navLinks = document.querySelectorAll(".profile-link"); // Получаем все ссылки в навигационном меню
-            var currentUrl = window.location.href; // Получаем текущий URL страницы
-
-            navLinks.forEach(function(link) {
-                // Проверяем, есть ли у ссылки атрибут href
-                if (link.hasAttribute("href")) {
-                    var href = link.getAttribute("href");
-                    // Проверяем, соответствует ли URL ссылки текущему URL страницы
-                    if (currentUrl.includes(href)) {
-                        link.classList.add("active-link"); // Добавляем класс active-link, если ссылка соответствует текущей странице
-                    }
-                }
-            });
-        });
+        
     </script>
 
 </body>

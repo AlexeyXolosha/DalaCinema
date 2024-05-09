@@ -1,0 +1,133 @@
+.view-application{
+    padding: 100px;
+    background-color: $dark;
+}
+
+.table-application{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.table-application tr{
+    background-color: #282828;
+}
+
+.table-application th, td{
+    text-align: center;
+    padding: 30px 25px;   
+    white-space: nowrap;
+}
+
+.application-btn{
+    font-weight: 700;
+    transition: 0.2s ease-in;
+}
+
+.application-btn:hover{
+    color: #1C93FF;
+}
+
+.select-application{
+    select{
+        color: $dark;
+        background-color: $white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+.table-application-title{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+/*POP UP вывод*/
+.pop_up-title{
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.pop_up_container_application{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pop-up-application-output-info{
+    width: 50%;
+}
+
+.subtitile-application-info{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.info-application{
+    color: $dark;
+    background-color: $white;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+/*Submission Application*/
+.submit-application{
+    background-color: $dark;
+    font-family: $font-accent;
+    padding: 100px;
+}
+
+.sbt-application-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.sbt-application-info{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    label{
+        font-size: 18px;
+        font-weight: 500;
+    }
+    input{
+        border: 1px solid $white;
+        border-radius: 5px;
+        height: 30px;
+        width: 450px;
+        padding: 20px 15px;
+    }
+    select{
+        background-color: $white;
+        color: $dark;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 10px 10px;
+    }
+    select:focus {
+        outline: none;
+    }
+}
+
+
+
+.btn-application{
+    display: block;
+    font-size: 18px;
+    color: $dark;
+    background-color: white;
+    padding: 10px;
+}
+
+.btn-application:hover{
+    opacity: .8;
+}

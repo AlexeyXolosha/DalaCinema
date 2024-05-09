@@ -1,21 +1,37 @@
 .footer{
-    padding: 80px 0;
-    min-height: 500px;
+    min-height: 480px;
     background-color: $dark;
+    padding: 150px 0;
 }
 
-.logo-footer{
+.footer-logo{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.logo-footer p{
+.logo-footer-in{
     font-size: 36px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.1rem;
+    transition: 0.3s ease-in;
 }
 
-.footer_item{
+.footer-social-link{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 100px 0;
+}
+
+.footer-link{
+    margin: 10px 10px;
+}
+
+.footer-svg-social{
+    height: 50px;
+    width: 50px;
 }

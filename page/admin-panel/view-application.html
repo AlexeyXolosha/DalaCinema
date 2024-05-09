@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
+    <title>DalaCinema - Просмотр заявок</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header_top">
+                <div class="header_top_row">
+                    <a href="#!" class="logo">
+                        <img src="../../img/logo.png" alt="DalaCinema" class="logo-img">
+                    </a>
+                    <div class="header_nav">
+                        <nav class="nav">
+                            <ul class="nav-ul">
+                                <li><a href="index.html" class="nav-a">Главная</a></li>
+                                <li><a href="page/news.html" class="nav-a">Новости</a></li>
+                                <li><a href="page/list-project.html" class="nav-a">Проекты</a></li>
+                                <li><a href="#!" class="nav-a">О нас</a></li>
+                                <li><a href="page/login.html" class="nav-a">Вход</a></li>       
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </header>
+
+    <main>
+        <section class="view-application">
+            <div class="container">
+                <div class="application-project">
+                    <table class="table-application">
+                        <thead>
+                            <tr>
+                                <th>Название проекта</th>
+                                <th>Дата подачи заявки</th>
+                                <th>Подробнее</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><p class="table-application-title">Соңғы аялдама</p></td>
+                                <td>2024-04-26</td>
+                                <td><button class="application-btn">
+                                    Подробнее
+                                </button></td>
+                                <td><div class="select-application">
+                                    <select  name="status">
+                                        <option>Рассматривается</option>
+                                        <option>Отклонена</option>
+                                        <option>Принята</option>
+                                    </select>
+                                </div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <div class="pop_up1">
+            <div class="pop_up_container">
+                <div class="pop_up_body">
+                   <div class="pop_up_container_application">
+                        <h1 class="pop_up-title">Заявка</h1>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Фамилия</p>
+                            <p class="info-application" id=surname>Кропоткин</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Имя</p>
+                            <p class="info-application" id=name>Николай</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Отчество</p>
+                            <p class="info-application" id=last_name>Валерьевич</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Дата рождения</p>
+                            <p class="info-application" id=date_of_birth>17/09/1993</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Рост</p>
+                            <p class="info-application" id=body_height>175 см</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Вес</p>
+                            <p class="info-application" id=body_weight>75</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Адрес</p>
+                            <p class="info-application" id=residential_address>г.Астана, улица Пушкина 4</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Размер обуви</p>
+                            <p class="info-application" id=shoe_size>45</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Размер одежды</p>
+                            <p class="info-application" id=clothing_size>XXL</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Номер телефона</p>
+                            <p class="info-application" id=phone_number>87054618896</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Опыт съемки:</p>
+                            <p class="info-application" id=shooting_experience></p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Instagram профиль:</p>
+                            <p class="info-application" id=link_to_instagram>@kropotkin_official</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Email</p>
+                            <p class="info-application" id=email>kropotik_val3riy@gmail.com</p>
+                        </div>
+                        <div class="pop-up-application-output-info">
+                            <p class="subtitile-application-info">Дата подачи заявки</p>
+                            <p class="info-application" id=application_date>2024/04/26</p>
+                        </div>
+                        <button class="btn41-43 btn-41" onclick="closePopup()">Закрыть</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+</html>
+
+
+

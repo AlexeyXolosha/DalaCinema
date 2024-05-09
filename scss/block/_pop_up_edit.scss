@@ -1,0 +1,50 @@
+.pop_up_film_edit{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 2;
+}
+
+.pop_up_container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.pop_up_film_edit_body{
+    font-family: $font-accent-two;
+    margin: auto;
+    max-width: 600px;
+    background-color: $dark;
+    border-radius: 10px;
+    text-align: center;
+    padding: 70px 20px 70px 20px;
+    position: relative;
+    overflow-y: auto; 
+    max-height: 80vh; 
+}
+
+.pop_edit_add{
+    display: none;
+    position: fixed;
+    right:75px;
+    top: 25%;
+    z-index: 3;
+}
+
+.pop_up_body_add{
+    font-family: $font-accent-two;
+    margin: auto;
+    width: 550px;
+    background-color: $dark;
+    border-radius: 10px;
+    text-align: center;
+    padding: 70px 20px 70px 20px;
+    position: relative;
+    overflow-y: auto; 
+    max-height: 80vh; 
+}

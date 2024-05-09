@@ -32,14 +32,6 @@
         </div>
     </header>
 
-    <div class="accordian">
-        <div class="container">
-            <div class="acoordian-inner">
-
-            </div>
-        </div>
-    </div>
-
     <main class="main-add-element">
         <section class="add-project">
             <div class="container">
@@ -244,6 +236,32 @@
             </div>
         </div>
 
+        <div class="pop_edit_add" id="popup_edit_prod_producer">
+            <div class="pop_up_container">
+                <div class="pop_up_body_add" id="producerPopup">
+                    <p class="title-add-element">Выберите продюсера</p>
+                    <table class="table-pop-up-add">
+                        <div class="filter-search-block project-search-m">
+                            <div class="search-block-filter">
+                                <input type="text" id="searchInputProducersAdd" oninput="filterPoisk('searchInputProducersAdd', '#popup_add_prod_producer_spicok')" placeholder="Поиск по продюсерам...">
+                            </div>
+                        </div>
+                        <tbody id="popup_add_prod_producer_spicok">
+                            <tr>
+                                <td>
+                                    <div class="images-td-preview">
+                                        <img src="../../img/actors/Edil Ramazan.jpg" class="table-pop-up-images">
+                                    </div>
+                                </td>
+                                <td><p id="select-chel-add-{producer_id_placeholder}">Андрей Михайлович Алексеев</p></td>
+                                <td><input id="chec-p-{producer_id_placeholder}" type="checkbox" name="selectedProducers[]" value="{producer_id_placeholder}" onchange="addFIOFILMTEAMADD('{producer_surname_placeholder} {producer_name_placeholder} {producer_otchestvo_placeholder}', {producer_id_placeholder}, 'p', 'chec-p-{producer_id_placeholder}')"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <section class="filter">
             <div class="container">
                 <form id="filterFormProd" action="/admin/projects" method="GET">
@@ -337,6 +355,178 @@
                 </div>
             </div>
         </section>
+        
+        <div class="pop_up_film_edit">
+            <div class="pop_up_container">
+                <div class="pop_up_film_edit_body">
+                        <div id="popup_edit_prod_img-div" class="pop-section-image">
+                            <p>Постер вертикальный</p>
+                            <div class="image-output-popup">
+                                <img class="img-popup" id="popup_edit_prod_img" src="">
+                                <button class="delete-button" id="delete_old_img_only-v" onclick="delete_old_img('td-img-v-', 'v')">
+                                    <span class="material-symbols-outlined delete-icon">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                
+                        <div id="popup_edit_prod_img-div-G" class="pop-section-image">
+                            <p>Постер горизонтальный</p>
+                            <div class="image-output-popup">
+                                <img class="img-popup" id="popup_edit_prod_img-G" src="">
+                                <button class="delete-button" id="delete_old_img_only-g" onclick="delete_old_img('td-img-g-', 'g')">
+                                    <span class="material-symbols-outlined delete-icon">delete</span>
+                                </button>
+                            </div>
+                        </div>
+                
+                        <div class="project-section-add-image">
+                            <label for="popup_edit_prod_img_new-div" class="input-label">Выберите вертикальное изображение постера:</label>
+                            <input type="file" id="popup_edit_prod_img_new-div" accept="image/*" onchange="previewImageProd(event)">
+                            <img style='max-width: 100px; max-height: 100px; display: none' id="popup_edit_prod_img_new-div-src" src="">
+                        </div>
+                        <div class="project-section-add-image">
+                            <label for="popup_edit_prod_img_new-div-G" class="input-label">Выберите горизонтальное изображение постера:</label>
+                            <input type="file" id="popup_edit_prod_img_new-div-G" accept="image/*" onchange="previewImageProdG(event)">
+                            <img style='max-width: 100px; max-height: 100px; display: none' id="popup_edit_prod_img_new-div-src-G" src="">
+                        </div>
+                
+                        <div class="project-section-info-project">
+                            <p class="title-add-element">Название</p>
+                            <input type="text" id="popup_edit_prod_name">
+                        </div>
+                        <div class="project-section-info-project">
+                            <p class="title-add-element">Описание</p>
+                            <textarea id="popup_edit_prod_description"></textarea>
+                        </div>
+                
+                        <div class="project-section-selector-type-project-check">
+                            <p class="title-add-element">Жанр:</p>
+                            <div class="project-sector-checkbox">
+                                <!-- PHP code removed -->
+                            </div>
+                        </div>
+                
+                        <div class="btn-inner">
+                            <p class="title-add-element">Статус:</p>
+                            <div class="input-radio">
+                                <input type="radio" id="popup_edit_prod_status-ready" name="status" value="ready" onclick="statysReady()">
+                                <label for="popup_edit_prod_status-ready">Готово</label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" id="popup_edit_prod_status-in_production" name="status" value="in_production" onclick="statysIn_production()">
+                                <label for="popup_edit_prod_status-in_production">В производстве</label><br>
+                            </div>
+                        </div>
+                
+                        <div id="popup_edit_prod_casting-div" style="display: none" class="project-section-selector-type-project">
+                            <p class="title-add-element">Кастинг:</p>
+                            <div class="input-radio">
+                                <input type="radio" id="popup_edit_prod_casting-disabled" name="casting" value="no" onclick="castingNo()">
+                                <label for="popup_edit_prod_casting-disabled">Выключен</label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" id="popup_edit_prod_casting-enabled" name="casting" value="yes" onclick="castingYes()">
+                                <label for="popup_edit_prod_casting-enabled">Включен</label>
+                            </div>
+                        </div>
+                
+                        <div id="popup_edit_prod_casting_comment-div" style="display: none" class="project-section-info-project">
+                            <p class="title-add-element">Комментарий к кастингу:</p>
+                            <textarea id="popup_edit_prod_casting_comment" class="pop-text-area"></textarea><br>
+                        </div>
+                
+                        <div id="popup_edit_prod_duration-div">
+                            <p class="title-add-element">Длительность:</p>
+                            <input type="time" id="popup_edit_prod_duration" placeholder="01:23" class="comp_time">
+                        </div>
+                        <div id="popup_edit_prod_completion_date-div">
+                            <p class="title-add-element">Дата завершения:</p>
+                            <input type="date" id="popup_edit_prod_completion_date" class="comp_date">
+                        </div>
+                
+                        <div class="project-section-add">
+                            <p class="title-add-element">Добавить продюсера</p>
+                            <div id="select_producer"></div>
+                            <button type="button" id="addProducerButton" class="btn41-43 btn-41" onclick="open_popup_edit_prod_producer()">Изменить</button>
+                        </div>
+                        <div class="project-section-add">
+                            <p class="title-add-element">Добавить режиссера</p>
+                            <div id="select_rezhisser"></div>
+                            <button type="button" id="addRezhisserButton" class="btn41-43 btn-41" onclick="open_popup_edit_prod_rezhisser()">Изменить</button>
+                        </div>
+                        <div class="project-section-add">
+                            <p class="title-add-element">Добавить оператора</p>
+                            <div id="select_operator"></div>
+                            <button type="button" id="addOperatorButton" class="btn41-43 btn-41" onclick="open_popup_edit_prod_operator()">Изменить</button>
+                        </div>
+                        <div class="project-section-add">
+                            <p class="title-add-element">Добавить актера</p>
+                            <div id="select_actors"></div>
+                            <button type="button" id="addActorsButton" class="btn41-43 btn-41" onclick="open_popup_edit_prod_actors()">Изменить</button>
+                        </div>
+                
+                        <div class="project-section-add" style="display: none" id="popup_edit_prod_parts-div">
+                            <p class="title-add-element">Количество серий:</p>
+                            <input type="number" id="popup_edit_prod_parts" class="number_seria">
+                        </div>
+                
+                        <div class="project-section-info-project">
+                            <p class="title-add-element">Ссылка на материал</p>
+                            <input type="text" class="url-link-youtube" id="popup_edit_prod_link">
+                        </div>
+                
+                        <div class="btn-inner">
+                            <p class="title-add-element">Видимость проекта:</p>
+                            <div class="input-radio">
+                                <input type="radio" id="popup_edit_prod_visibility_enabled" name="visibility" value="on">
+                                <label for="popup_edit_prod_visibility_enabled">Включена</label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" id="popup_edit_prod_visibility_disabled" name="visibility" value="off">
+                                <label for="popup_edit_prod_visibility_disabled">Выключена</label>
+                            </div>
+                        </div>
+                
+                        <input type="hidden" id="popup_edit_prod_ID" name="id">
+                
+                        <div class="project-section-photo-add pop-up-add-gallery"> 
+                            <p>Фото-галерея</p>
+                            <div id="gallery-div-popup"></div>
+                            <input type="button" class="btn-add-gallery" value="Добавить фотографии..." onclick="addObGalleryDivPopup()">
+                        </div>
+                
+                        <button onclick="edit_projects()" class="btn-save-project">Сохранить</button>
+                    </div>
+                    <div style="display: none" class="popup_edit_prod_FILMM" id="popup_edit_prod_producer"
+                        onclick="stopPropagation(event)">
+                        <p>Продюсер(ы):</p>
+                        <table border="1">
+                            <!-- PHP code removed -->
+                        </table>
+                    </div>
+                    <div style="display: none" class="popup_edit_prod_FILMM" id="popup_edit_prod_rezhisser"
+                        onclick="stopPropagation(event)">
+                        <p>Режиссер(ы):</p>
+                        <table border="1">
+                            <!-- PHP code removed -->
+                        </table>
+                    </div>
+                    <div style="display: none" class="popup_edit_prod_FILMM" id="popup_edit_prod_operator"
+                        onclick="stopPropagation(event)">
+                        <p>Оператор(ы):</p>
+                        <table border="1">
+                            <!-- PHP code removed -->
+                        </table>
+                    </div>
+                    <div style="display: none" class="popup_edit_prod_FILMM" id="popup_edit_prod_actors"
+                        onclick="stopPropagation(event)">
+                        <p>Актер(ы):</p>
+                        <table border="1">
+                            <!-- PHP code removed -->
+                        </table>
+                    </div>
+                </div>      
+        </div>
     </main>
 
     <script>

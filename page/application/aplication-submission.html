@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
+    <title>DalaCinema - Подача заявки</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header_top">
+                <div class="header_top_row">
+                    <a href="#!" class="logo">
+                        <img src="../../img/logo.png" alt="DalaCinema" class="logo-img">
+                    </a>
+                    <div class="header_nav">
+                        <nav class="nav">
+                            <ul class="nav-ul">
+                                <li><a href="index.html" class="nav-a">Главная</a></li>
+                                <li><a href="page/news.html" class="nav-a">Новости</a></li>
+                                <li><a href="page/list-project.html" class="nav-a">Проекты</a></li>
+                                <li><a href="#!" class="nav-a">О нас</a></li>
+                                <li><a href="page/login.html" class="nav-a">Вход</a></li>       
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </header>
+
+    <main>
+        <section class="submit-application">
+            <div class="container">
+                <div class="sbt-application-container">
+                    <h1 class="pop_up-title">Подача заявки</h1>
+                    <form action="/views/pages/src/action/casting_handler.php" method="POST">
+                        <div class="sbt-application-info">
+                            <label for="project_id">Название проекта:</label>
+                            <input type="hidden" id="project_id" name="project_id" required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="surname">Фамилия:</label>
+                            <input type="text" id="surname" name="surname" pattern="^[A-Za-zА-Яа-я]+(?: [A-Za-zА-Яа-я]+)?(?: [A-Za-zА-Яа-я]+)?$"
+                                title="Пожалуйста введите действительную фамилию." required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="name">Имя:</label>
+                            <input type="text" id="name" name="name" pattern="^[A-Za-zА-Яа-я]+(?: [A-Za-zА-Яа-я]+)?(?: [A-Za-zА-Яа-я]+)?$"
+                                title="Пожалуйста введите действительное имя." required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="last_name">Отчество:</label>
+                            <input type="text" id="last_name" name="last_name" pattern="^[A-Za-zА-Яа-я]+(?: [A-Za-zА-Яа-я]+)?(?: [A-Za-zА-Яа-я]+)?$"
+                                title="Пожалуйста введите действительное отчество." required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Пожалуйста, введите действительный адрес электронной почты"
+                                required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="date_of_birth">Дата рождения:</label>
+                            <input type="date" id="date_of_birth" name="date_of_birth" required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="body_height">Рост:</label>
+                            <input type="text" id="body_height" name="body_height" pattern="^\d+(\.\d+)?$" title="Пожалуйста, введите только числовые данные."
+                                required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="body_weight">Вес:</label>
+                            <input type="text" id="body_weight" name="body_weight" pattern="^\d+(\.\d+)?$" title="Пожалуйста, введите только числовые данные."
+                                required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="residential_address">Адрес проживания:</label>
+                            <input type="text" id="residential_address" name="residential_address" required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="shoe_size">Размер обуви:</label>
+                            <input type="text" id="shoe_size" name="shoe_size" pattern="^\d+(\.\d+)?$" title="Пожалуйста, введите только числовые данные."
+                                required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="clothing_size">Размер одежды:</label>
+                            <select id="clothing_size" name="clothing_size" required>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="phone_number">Номер телефона:</label>
+                            <input type="tel" id="phone_number" name="phone_number" pattern="\+?[78]?\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}"
+                                title="Формат: +7 XXX XXX XXXX" required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="link_to_instagram">Ссылка на инстаграм:</label>
+                            <input type="text" id="link_to_instagram" name="link_to_instagram" pattern="https?:\/\/(www\.)?instagram\.com\/[a-zA-Z0-9_]+\/?"
+                                title="Пожалуйста, введите действительную ссылку на профиль Instagram." required>
+                        </div>
+                        <div class="sbt-application-info">
+                            <label for="shooting_experience">Опыт съёмок(в годах):</label>
+                            <input type="text" id="shooting_experience" name="shooting_experience" pattern="^\d+(\.\d+)?$"
+                                title="Пожалуйста, введите только числовые данные" required>
+                        </div>
+                        <div class="btn-application">
+                            <input type="submit" value="Подать заявку">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <script>
+        function formatPhoneNumber(inputId) {
+               var inputElement = document.getElementById(inputId);
+               var inputValue = inputElement.value.replace(/\D/g, ''); // Удаляем все не цифры
+               var formattedInput = '';
+ 
+               if (inputValue.length > 0) {
+               formattedInput += '+' + inputValue.slice(0, 1);
+               }
+               if (inputValue.length > 1) {
+               formattedInput += ' ' + inputValue.slice(1, 4);
+               }
+               if (inputValue.length > 4) {
+               formattedInput += ' ' + inputValue.slice(4, 7);
+               }
+               if (inputValue.length > 7) {
+               formattedInput += ' ' + inputValue.slice(7, 9);
+               }
+               if (inputValue.length > 9) {
+               formattedInput += ' ' + inputValue.slice(9, 11);
+               }
+ 
+               inputElement.value = formattedInput;
+        }
+ </script>
+
+</body>
+</html>

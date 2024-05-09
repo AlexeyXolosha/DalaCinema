@@ -3,7 +3,6 @@ function initializePopUp(openBtnId, closeBtnId, popUpId) {
     const closeBtn = document.getElementById(closeBtnId);
     const popUp = document.getElementById(popUpId);
 
-    // Проверяем, существует ли кнопка открытия
     if (openBtn) {
         openBtn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -11,7 +10,6 @@ function initializePopUp(openBtnId, closeBtnId, popUpId) {
         });
     }
 
-    // Проверяем, существует ли кнопка закрытия
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             popUp.classList.remove('active');
@@ -19,14 +17,11 @@ function initializePopUp(openBtnId, closeBtnId, popUpId) {
     }
 }
 
-
-// Вызовы функций для каждой страницы
 document.addEventListener("DOMContentLoaded", function() {
     initializePopUp('editGenre', 'closedGenreBtnUp', 'genrepopUPContainer');
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Вызов функции для страницы genre
     initializePopUp('addProducerButton', 'closedGenreBtnUp', 'producerPopupContainer');
 });
 
@@ -88,4 +83,3 @@ function onTabClick(item, allBtns, allTabs) {
         currentTab.classList.add('active-tabs');
     }
 }
-
