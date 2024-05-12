@@ -1,0 +1,22 @@
+.project-home-page{
+    padding: 10px 0;
+}
+
+.project-home-item{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    overflow: hidden;
+}
+
+.project-a-home img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.swiper-slide{
+    height: auto !important;
+}

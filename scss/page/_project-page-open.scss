@@ -1,50 +1,40 @@
-.project-open {
-    font-family: $font-accent-two;
+/*Project Block Info Main*/
+.project-info{
     background-color: $dark;
-    padding: 50px 0;
 }
 
-.project-inner{
-    display: flex; 
+.project-elements{
+    display: flex;
+    padding: 40px 0;
+}
+.project-poster-left-block{
+    flex: 0 0 320px;
 }
 
-.project-poster {
-    margin-right: 20px;
+.film-poster{
+    object-fit: cover;
 }
 
-.project-details{
+.project-details-main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.project-poster-open {
-    width: 300px; 
-    height: 500px;
-    object-fit: cover; 
-    object-position: center;
+    margin: 0 20px;
 }
 
 .project_name{
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 20px;
 }
 
-.project_subtitle{
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.project-info{
-    margin-top: 20px;
-}
-
-.project-row-info {
+.project-row-info{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 20px 0;
+}
+
+.project-row-title {
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .project-row-subtitle {
@@ -53,18 +43,11 @@
     white-space: nowrap;
 }
 
-.project-row-title {
-    margin-right: 10px;
-    font-size: 18px;
-    width: 150px;
-
-}
-
 .btn-block{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 400px;   
 }
 
 
@@ -73,6 +56,7 @@
     color: $dark;
     margin-top: 100px;
 }
+
 
 .project-description{
     width: 750px;

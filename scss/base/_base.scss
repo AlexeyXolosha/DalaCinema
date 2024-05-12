@@ -16,6 +16,15 @@ body{
     max-width: 1290px;
 }
 
+.container-wide{
+    max-width: 1920px;
+    margin-inline: 0;
+}
+
 a{
     color: $white;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    color: $dark !important;
 }

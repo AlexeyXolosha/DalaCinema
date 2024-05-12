@@ -44,11 +44,8 @@
 }
 
 .gallery-cadr-content{
-    display: flex;
-    align-items: center;
-    width: 300px;
-    height: 160px;
-    margin: 10px 0;
+    flex: 0 0 calc(25% - 20px);
+    margin: 10px 0; 
 }
 
 .gallery-cadr-img{
@@ -62,4 +59,12 @@
 .gallery-cadr-img:hover{
     transform: scale(1.1);
 }
+
+
+/*ADAPTIV*/
+.gallery-ph{
+    margin: 100px 0;
+    display: none;
+}
+
 

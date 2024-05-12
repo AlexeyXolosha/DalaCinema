@@ -9,62 +9,59 @@
 </head>
 <body>
 
-    <nav class="nav">
-        <div class="container">
-            <div class="nav-row">
-                <a href="#" class="logo">
-                    <img src="../img/logo.png" alt="">
-                </a>
-                <ul class="nav-list">
-                    <li><a class="nav-list-link" href="">Главная</a></li>
-                    <li><a class="nav-list-link" href="">Проекты</a></li>
-                    <li><a class="nav-list-link" href="">О Нас</a></li>
-                    <li><a class="nav-list-link" href="">Вход</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <section class="project-open">
-        <div class="container">
-            <div class="project-inner">
-                <div class="project-poster">
-                    <img src="../img/project/постер 2.png" alt="" class="project-poster-open">
-                </div>
-                <div class="project-details">
-                    <div class="project-intro">
-                        <h1 class="project_name">
-                            Соңғы аялдама
-                        </h1>
-                        <p class="project_subtitle">
-                            О проекте
-                        </p>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-row">
+                    <a href="#" class="DALA_LOGO"><img src="../img/logo_1.JPG" alt="DalaCinema" style="width: 75; height: 75px;"></a>
+                    <ul class="nav-list">
+                        <li><a class="nav-list-link" href="/index.html">Главная</a></li>
+                        <li><a class="nav-list-link" href="/page/list-project.html">Проекты</a></li>
+                        <li><a class="nav-list-link" href="">О Нас</a></li>
+                        <li><a class="nav-list-link" href="">Вход</a></li>
+                    </ul>
+                    <div class="burger-dala">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
                     </div>
-                    <div class="project-info">
-                        <div class="project-row-info">
-                            <div class="project-row-title">Жанр </div>
-                            <div class="project-row-subtitle">Боевик</div>
-                        </div>
-                        <div class="project-row-info">
-                            <div class="project-row-title">Время </div>
-                            <div class="project-row-subtitle">46 минут</div>
-                        </div>
-                        <div class="project-row-info">
-                            <div class="project-row-title">Количество </div>
-                            <div class="project-row-subtitle">4 серии</div>
-                        </div>
-                        <div class="project-row-info">
-                            <div class="project-row-title">Генеральный директор</div>
-                            <div class="project-row-subtitle">Жалын Тлеубергенов</div>
-                        </div>
-                        <div class="project-row-info">
-                            <div class="project-row-title">Режиссер </div>
-                            <div class="project-row-subtitle">Думан Еркімбек</div>
-                        </div>
-                        <div class="project-row-info">
-                            <div class="project-row-title">Оператор </div>
-                            <div class="project-row-subtitle">Айдос Сүлеймен Айдос Сүлеймен</div>
-                        </div>
+                </div>
+            </div>
+        </nav>
+   </header>
+    
+   <section class="project-info">
+        <div class="container">
+            <div class="project-elements">
+                <div class="project-poster-left-block">
+                    <img src="../img/project/постер 2.png" class="film-poster" alt="" >
+                </div>
+                <div class="project-details-main">
+                    <h1 class="project_name">Соңғы аялдама</h1>
+                    <p class="project_subtitle">О проекте</p>
+                    <div class="project-row-info">
+                        <div class="project-row-title">Жанр </div>
+                        <div class="project-row-subtitle">Боевик</div>
+                    </div>
+                    <div class="project-row-info">
+                        <div class="project-row-title">Время </div>
+                        <div class="project-row-subtitle">46 минут</div>
+                    </div>
+                    <div class="project-row-info">
+                        <div class="project-row-title">Количество </div>
+                        <div class="project-row-subtitle">4 серии</div>
+                    </div>
+                    <div class="project-row-info">
+                        <div class="project-row-title">Генеральный директор</div>
+                        <div class="project-row-subtitle">Жалын Тлеубергенов</div>
+                    </div>
+                    <div class="project-row-info">
+                        <div class="project-row-title">Режиссер </div>
+                        <div class="project-row-subtitle">Думан Еркімбек</div>
+                    </div>
+                    <div class="project-row-info">
+                        <div class="project-row-title">Оператор </div>
+                        <div class="project-row-subtitle">Айдос Сүлеймен Айдос Сүлеймен</div>
                     </div>
                     <div class="btn-block">
                         <a href="" class="btn41-43 btn-41">Подать заявку на кастинг</a>
@@ -73,7 +70,8 @@
                 </div>
             </div>
         </div>
-    </section>
+   </section>
+   
     
     <div class="project-block-material">
         <div class="container">
@@ -149,7 +147,7 @@
     </div>
 
     <div class="frame-project-block">
-        <div class="container swiper">
+        <div class="container frame-swiper swiper">
             <div class="frame-item swiper-wrapper">
                 <a data-fslightbox="first-lightbox" href="../img/img_serial/2024-03-19 07.34.06.jpg" class="project-images swiper-slide">
                     <img src="../img/img_serial/2024-03-19 07.34.06.jpg" alt="" class="gallery-project">
@@ -166,20 +164,32 @@
                 <a data-fslightbox="first-lightbox" href="../img/img_serial/2024-03-19 07.34.13.jpg" class="project-images swiper-slide">
                     <img src="../img/img_serial/2024-03-19 07.34.13.jpg" alt="" class="gallery-project">
                 </a>
+                <a data-fslightbox="first-lightbox" href="../img/img_serial/1610091711kb23e-740x.jpg" class="project-images swiper-slide">
+                    <img src="../img/img_serial/1610091711kb23e-740x.jpg" alt="" class="gallery-project">
+                </a>
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
     </div>
 
-
-
-
+    <footer class="footer">
+        <div class="container">
+            <div class="DALA_FOOTER">DALA<span>CINEMA</span></div>
+            <div class="social_footer">
+                <a href="" class="social_a">
+                    <img src="../img/icon/instagram.svg" alt="" style="width: 75px; height: 75px;" class="social_icon">
+                </a>
+                <a href="" class="social_a">
+                    <img src="../img/icon/tiktok.svg" alt="" style="width: 75px; height: 75px;" class="social_icon">
+                </a>
+            </div>
+        </div>
+    </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/fslightbox.js"></script>
-
         <script>
             window.addEventListener('DOMContentLoaded', function() {
                 var videos = document.querySelectorAll('.video');
@@ -200,17 +210,42 @@
         </script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                var swiper_project = new Swiper('.swiper', {
+                var swiper_project = new Swiper('.frame-swiper', {
                     direction: 'horizontal',
-                    slidesPerView: 3, // Change to the number of visible slides you want
+                    slidesPerView: getSlidesPerView(), 
                     spaceBetween: 10,
                     loop: true,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     },
-                    centeredSlides: true, // Добавьте параметр для центрирования слайдов
-                    initialSlide: 3,
+                    centeredSlides: true, 
+                    initialSlide: 1,
+                });
+        
+                function getSlidesPerView() {
+                    var screenWidth = window.innerWidth;
+                    
+                    if (screenWidth <= 879) {
+                        return 1; 
+                    } else {
+                        return 3; 
+                    }
+                }
+        
+                window.addEventListener('resize', function () {
+                    swiper_project.params.slidesPerView = getSlidesPerView();
+                    swiper_project.update();
+                });
+            });
+        </script>
+         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const navEl = document.querySelector('.nav-list');
+                const burger_menu = document.querySelector('.burger-dala')
+    
+                burger_menu.addEventListener('click', () => {
+                    navEl.classList.toggle('burger-active');
                 });
             });
         </script>

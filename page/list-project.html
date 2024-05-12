@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>DalaCinema - Project</title>
 </head>
 <body>
     
-    <nav class="nav">
-        <div class="container">
-            <div class="nav-row">
-                <a href="#" class="logo">
-                    <img src="../img/logo.png" alt="">
-                </a>
-                <ul class="nav-list">
-                    <li><a class="nav-list-link" href="">Главная</a></li>
-                    <li><a class="nav-list-link" href="">Проекты</a></li>
-                    <li><a class="nav-list-link" href="">О Нас</a></li>
-                    <li><a class="nav-list-link" href="">Вход</a></li>
-                </ul>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-row">
+                    <a href="#" class="DALA_LOGO"><img src="../img/logo_1.JPG" alt="DalaCinema" style="width: 75; height: 75px;"></a>
+                    <ul class="nav-list">
+                        <li><a class="nav-list-link" href="/index.html">Главная</a></li>
+                        <li><a class="nav-list-link" href="/page/list-project.html">Проекты</a></li>
+                        <li><a class="nav-list-link" href="">О Нас</a></li>
+                        <li><a class="nav-list-link" href="">Вход</a></li>
+                    </ul>
+                    <div class="burger-dala">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+   </header>
 
     <div class="intro">
         <div class="container">
@@ -34,41 +40,101 @@
 
     <main>
         <div class="container">
-            <div class="filter-project">
-                <ul class="filter-ul">
-                    <a href="#!"><li class="filter-li">Завершенные</li></a>
-                    <a href=""><li class="filter-li">В процессе разработки</li></a>
-                </ul>
-            </div>
-        </div>
-    
-        <div class="project_page">
-            <div class="container">
-                <div class="project-page-content">
-                    <div class="project-page-grid">
-                        <a href="#" class="project-page-card">
-                            <div class="project-image-page">
-                                <img src="../img/project/посте(1).jpg" alt="">
-                            </div>
-                            <div class="project-name">
-                            <p>Соңғы аялдама</p>
-                            </div>
-                        </a>
-                        <a href="#" class="project-page-card">
-                            <div class="project-image-page">
-                                <img src="../img/project/посте.jpg" alt="" class="project-image">
-                            </div>
-                            <p class="project-name">Бозторғай. Жылы ұя</p>
-                        </a>
+            <div class="filter-project-p">
+                <div class="filter-project">
+                   <ul class="filter-ul">
+                        <li><a href="" class="filter-li filter-li-active">Все</a></li>
+                        <li><a href="" class="filter-li">Завершенные</a></li>
+                        <li><a href="" class="filter-li">В процессе разработки</a></li>
+                    </ul>
+                </div>
+                <div class="filter-search-block-project">
+                    <div class="search-block-filter search-genre">
+                        <span class="material-symbols-outlined">search</span>
+                        <input id="search-inp" type="text" name="search" list="searchListProd"
+                               placeholder="Введите название" value="<?php echo $search; ?>"
+                               oninput="searchInputProd()">
+                        <datalist id="searchListProd"></datalist>
+                        <button type="button" onclick="clickSearch()">Поиск</button>
+                    </div>
+                    <div id="searchListProdDiv" class="search-list-result">
+                        <div class="search-list-item">
+                            <span class="material-symbols-outlined">search</span>
+                            <a href="/project?id=${obj['id']}"><p>${obj['name']}</p></a><br>
+                        </div>
+                        <div class="search-list-item">
+                            <span class="material-symbols-outlined">search</span>
+                            <a href="/project?id=${obj['id']}"><p>${obj['name']}</p></a><br>
+                        </div>
+                        <div class="search-list-item">
+                            <span class="material-symbols-outlined">search</span>
+                            <a href="/project?id=${obj['id']}"><p>привет</p></a><br>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <section class="project-page">
+            <div class="container">
+                <div class="project-element">
+                    <a href="" class="project-item">
+                        <div class="project-images-item">
+                            <img src="../img/project/посте.jpg" alt="" style="width: 400px; height: 235px;">
+                        </div>
+                        <div class="project-info-element">
+                            <p class="info-title">Бозторгай</p>
+                        </div>
+                    </a>
+                    <a href="" class="project-item" >
+                        <div class="project-images-item">
+                            <img src="../img/project/посте(1).jpg" alt="" style="width: 400px; height: 235px;">
+                        </div>
+                        <div class="project-info-element">
+                            <p class="info-title">Соңғы аялдама</p>
+                        </div>
+                    </a>
+                    <a href="" class="project-item" >
+                        <div class="project-images-item">
+                            <img src="../ivan-bondar-trees-oceangrtgrg.jpg" alt="" style="width: 400px; height: 235px;">
+                        </div>
+                        <div class="project-info-element">
+                            <p class="info-title">Сен жалғыз емессің</p>
+                        </div>
+                    </a>
+                    <a href="" class="project-item">
+                        <div class="project-images-item">
+                            <img src="../img/project/посте.jpg" alt="" style="width: 400px; height: 235px;">
+                        </div>
+                        <div class="project-info-element">
+                            <p class="info-title">Бозторгай</p>
+                        </div>
+                    </a>
+                    <a href="" class="project-item" >
+                        <div class="project-images-item">
+                            <img src="../img/project/посте(1).jpg" alt="" style="width: 400px; height: 235px;">
+                        </div>
+                        <div class="project-info-element">
+                            <p class="info-title">Соңғы аялдама</p>
+                        </div>
+                    </a>
+                    <a href="" class="project-item" >
+                        <div class="project-images-item">
+                            <img src="../ivan-bondar-trees-oceangrtgrg.jpg" alt="" style="width: 400px; height: 235px;">
+                        </div>
+                        <div class="project-info-element">
+                            <p class="info-title">Сен жалғыз емессің</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
     
         <div class="container">
             <div class="pagination">
                 <a href="" class="pagination-a">Назад</a>
-                <a href="" class="pagination-a">1</a>
+                <a href="" class="pagination-a pagination-a-active">1</a>
                 <a href="" class="pagination-a">2</a>
                 <a href="" class="pagination-a">3</a>
                 <a href="" class="pagination-a">Вперед</a>
@@ -76,21 +142,30 @@
         </div>    
     </main>
 
+   
     <footer class="footer">
         <div class="container">
-            <a class="logo-footer" href="">
-                <p>DalaCinema</p>
-            </a>
-            <div class="footer_item">
-                <ul>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Кастинги</a></li>
-                    <li><a href="#">Проекты</a></li>
-                </ul>
+            <div class="DALA_FOOTER">DALA<span>CINEMA</span></div>
+            <div class="social_footer">
+                <a href="" class="social_a">
+                    <img src="../img/icon/instagram.svg" alt="" style="width: 75px; height: 75px;" class="social_icon">
+                </a>
+                <a href="" class="social_a">
+                    <img src="../img/icon/tiktok.svg" alt="" style="width: 75px; height: 75px;" class="social_icon">
+                </a>
             </div>
         </div>
     </footer>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navEl = document.querySelector('.nav-list');
+            const burger_menu = document.querySelector('.burger-dala')
+
+            burger_menu.addEventListener('click', () => {
+                navEl.classList.toggle('burger-active');
+            });
+        });
+    </script>
     <script src="../js/app.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
-.nav{
+.header{
     background-color: $dark;
+}
+.nav{
     padding: 20px 0;
 }
 
@@ -20,6 +22,7 @@
 .nav-list-link{
     font-size: 18px;
     font-weight: 500;
+    letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.3s ease; 
     position: relative;
@@ -42,9 +45,35 @@
     left: 0;
 }
 
-
-.logo{
-    max-width: 70px;
-    max-height: 70px;
+.DALA_LOGO img{
+    border-radius: 50%;
 }
 
+.burger-dala{
+    display: none;
+    cursor: pointer;
+}
+
+.burger-active{
+    display: flex !important;
+}
+
+.bar{
+    height: 3px;
+    width: 30px;
+    background-color: $white;
+    margin: 5px 0;
+    
+}
+
+
+.header-admin-menu{
+    padding: 50px 0;
+    background-color: $dark;
+}
+
+.nav-list-menu-admin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

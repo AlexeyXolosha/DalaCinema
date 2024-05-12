@@ -261,60 +261,6 @@
     opacity: 0.9;
 }
 
-/*Filter*/
-
-.filter-search-block {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-.search-block-filter{
-    width: 500px;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    color: $dark;
-    background-color: #f7f5f5;
-    border-radius: 10px;
-    input{
-        margin-left: 10px;
-    }
-}
-
-.search-block-filter.search-genre{
-    display: flex;
-    justify-content: space-between;
-}
-
-.filter-personal-inner{
-    display: flex;
-    justify-content: space-between;
-}
-
-.filter-block{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.filter-select{
-    select{
-        margin: 10px 0;
-        border: 1px solid $white;
-        border-radius: 3px;
-        height: 40px;
-        width: 160px;
-        padding: 5px 10px;
-        background-color: $white;
-        color: $dark;
-    }
-}
-
-.filter-button{
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-}
 
 .output-info-add{
     display: flex;

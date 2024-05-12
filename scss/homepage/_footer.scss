@@ -1,0 +1,28 @@
+.footer{
+    color: $white;
+    min-height: 500px;
+    background-color: $dark;
+    padding: 150px 0;
+}
+
+.DALA_FOOTER{
+    text-align: center;
+    font-size: 76px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.social_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_a{
+    margin: 40px 50px;
+}
+
+.social_icon{
+    display: block;
+    transition: 0.3s ease;
+}
